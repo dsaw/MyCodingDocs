@@ -1,5 +1,5 @@
 
-#Try Git Tutorial
+## Try Git Tutorial
 
 * _git init_ - initialises the git repository. A .git settings file is added to start **version control**
 
