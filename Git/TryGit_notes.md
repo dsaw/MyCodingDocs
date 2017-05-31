@@ -41,6 +41,8 @@
 * _git merge branch_ - Merges (copies) the changes of branch to the current  branch.
 	* Merge conflicts can happen. Some files may have different changes in both the branches. Choose the changes you want to keep
 	
-* _git branch -d clean_up - Delete the branch after merging.
+* _git branch -d clean-up_ - Delete the branch after merging.
 	* If branch is not merged and you have to delete it, add -d -f option.
+
+* _git push_ - Push all the changes.
 
