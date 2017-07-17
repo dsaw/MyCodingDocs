@@ -60,7 +60,7 @@
 		* **Lengths** :
 			* **Absolute lengths**- Pixels are fixed to a phyical measurement, but vary across low density and high density vieweing devices. 96 pixels make an inch.
 			* **Relative lengths**- % percentage of parent element property. em is the value relative to the current font size of the element or one of the set font sizes of the ancestor elements.
-			* Relative lengths provide flexibility.
+			* Relative lengths provide flexibility.	
 
 
 * ### Box Model
@@ -157,6 +157,125 @@
 		* <q> - Used for short, inline quotations.
 		* <blockquote> - Used for longer external quotations.
 	
-			
+* ### Setting Background & Gradients
+		* The way to contribute appearance to a website. They can be a solid color, image, gradient, or a combination of these.
+		* _background-image : url(bg.png)_ - Sets the backgroun-image to the url. Could be a local file ot a file in the www.
+		* _background-color : #hexval_ - The background-color can be set to hexadecimal value.
+		* _background-repeat : repeat-x, repeat-y, no-repeat_ - Specify the direction in which the background image is repeated or not repeated at all.
+		* _background-position : <horizontal-offset> <vertical-offset>;_ - Shifts the position of the image relative to the top left corner.
+		* _background : <color> <image> <position> <repeat>_ - shorthand version
 		
-	
+	* ## Background gradients
+		* _Linear gradients_ - Developers can generate gradients easily using the CSS3 gradient functions.
+			*_background-color: linear-gradient(<direction>, <start-color>, <end-color>)_ - An angle can be specified as direction. String values can be used to point to right bottom, right top, left bottom, left top.
+			* Multiple colors can be specified as color stops and stop points specified that will transition from that start color to end color
+			* Remember, if the the image is not a square, the gradient will not proceed directly from one corner to another. These rough corners are called "magic corners"
+		* _Radial gradients_ - A gradient that works from inside to the outside of the screen. First color will sit in the absolute center of the element, and will transition to the outer corners.
+		* ex: _radial-gradient(#ffff33, #542fe3);
+		* Multiple color stops can be declared so that browser will transition through all of them.
+		* ex: _linear-gradient(to left bottom, color1, color2 45%, color3 60%, color4 )_ - by default first color is at 0% and last color is at 100%.
+		
+		* Multiple background images can be displayed for the same element by separating background properties with a comma.
+		
+	* ## CSS3 Background properties
+		* _background-size : <width> <height>;_ - Can specify the width and height of the image in terms of the element box.
+			* Special values
+				* _cover_ - Image will be resized such that the smaller dimension (width or height) will stretch or shrink to cover the whole box. Aspect ratio is preserved.
+					Image can be _cropped_ though.
+				* _contain_ - Image will be resized such that the larger dimension will fit inside the element. Aspect ratio is preserved as above. 
+				* Note that the image can seem distorted so take care in the production environment.
+				
+		* _background-clip : border-box, padding-box, content-box;_ 
+			* _border-box_ - Default value. If a border specified, background is displayed under the border.
+			* _padding-box_ - Background image is displayed under the padding and is clipped beyond that in the border.
+			* _content-box_ - Background image is displayed under the content and is clipped beyond that in the padding.
+		* _background-origin : border-box, padding-box, content-box;_
+			* _border-box_ - Image starts from border of element.
+			* _padding-box_ - Image starts from directly **within** the border. Default value.
+			* _content-box_ - Image is positioned from within the padding.
+			
+* ### Displaying Lists
+	* Lists are ubiquitous in websites. There are three different types of lists unordered, ordered & description.
+	 We can mark the list item abandoned.
+	 * ## Unordered Lists - List items whose order does not matter. Marked by <li> block level element.
+	 * ## Ordered Lists - Items are in a list and order matters. <ol> is used as the main element.
+		* we can set _start_ attribute to make the list start from a different number.
+		* _value_ attribute can help initiate a different numbering from the applied li element.
+	 * ## Description Lists - Used to outline multiple items and their descriptions like a glossary.
+		* Creating a description list is accomplished using a block level element called <dl>
+		* A description term is <dt> is followed by a description contained by <dd>.
+		* Maintaining order is important. Multiple descriptions can be there for one description term.
+		* <dd> has a left margin set. Both elements have vertical margin.
+	* ## List style item marker
+		* _list-style-type: none,disc,square,upper-roman, decimal,georgian_ - It will set the content of the list item marker to be specified item.
+		* _list-style-position: inside, outside_ - It affects whether a list item line wraps into new line. Outside is a defaul value while in inside the line goes into a new line.
+	* ## Horizontally arrange lists
+		* **Inline-block / Inline** - Change the display property of list item to inline-block or inline. Modify margin and padding properties.
+		* **Float elements to left** - If the list item marker needs to be retained, then we can float the <li> elements to the left.
+	  
+* ### Adding Media
+	* To add images, we add the <img> element. It is a self-containing image.
+		* _src_ attribute and _alt_ attributes are added to make it work. _src_ attribute defines the source of image that will be displayed. _alt_ is the alternate text.
+		* Set width and height of given images using _width_ and _height_ properties.
+		* Positioning images : The images can be positioned in inline, inline-block and block.
+			* _float_ property could be used to float the images and let text wrap around it.
+			
+			
+	* _ <audio>_ - Audio files can be added to the webpage using this HTML5 tag. Various attributes need to be specified.
+		* _src_ attribute specifies the audio file to be loaded.
+		* _autoplay_ - Audio will start playing as soon as the webpage is loaded.
+		* _controls_ - Shows up the controls of the audio including the play/pause button,seek and volume.
+		* _preload: none,auto,metadata_ - auto is the default value where the audio is loaded automatically. None does the opposite. Metadata will load the details of the audio like playtime etc.
+		* _loops_ - Audio will loop.
+		
+		* Most popular audio formats are ogg, mp3, wav. Fallbacks are prudent if the browser cannot support a particular file format.
+			* To support multiple fallbacks, audio files can be specified in multiple _<source>_ elements. Specify the src and type attributes for the sound samples defined.
+		
+	* _<video>_ -  Video files can be added to the webpage. The attributes are same as **audio tag**.
+		* Width and height is specified to speed up rendering of webpage and reduce bandwidth.
+		* _poster_ attribute - Specifies an image to be shown before the video is played.
+	* Inline Frames - Embed other webpages inside the main webpage.
+		* _<iframe src="google.com">_ - Link could be an absolute URL or relative URL. Any such page can be referenced.
+			* The styles on the current page doesn't apply on the iframe.
+			* Default styles on iframe are frameborder, height and width.
+	* Figures & Figure Captions
+		* Figures is used to identify and wrap self-contained content, in the form of media. It surrounds images, audio clips, videos etc.
+			More than one item of content can be shown in one figure. These items should be related with each other.
+		* _<figure>_ - Semantically identifies such figures.
+		* _<figcaption>_ - This caption can be added anywhere in the figure element. Before or after media. 
+			Only **one** caption is permitted.
+
+* ### Building Forms
+	* Forms are a way to capture content and process requests.
+	* To initialize a form,  we'll add a form element that identifies where the page control elements appear.
+	* The element <form> has attribute _action_ and _method_.
+		* It will wrap all elements in the form.
+	* _<input type="text" name="company">_ - It is used to obtain text from users. It is self-contained.
+		* HTML5 has introduced new input type values _color_, _date_, _email_, _range_.
+	* _<textarea name="comment">_ - Just like an input which span multiple lines.
+	* Multiple Choice Inputs & Menus
+			* _Radio buttons_ - <input type="radio" name="day" value="Friday" > <input type="radio" name="day" value="Saturday" > 
+			* _Checkboxes_ - <input type="checkbox" name="day" value="Sat">
+			* Apply checked attribute to keep it checked initially.
+			* _Drop down list_ - Offers a way to provide long list of options.
+			* _<select name="n" multiple>_ element wraps all the menu options.
+			* _<option value="val"> _ are the options that are wrapped.
+			* When submitting the form data, the name/value pairs are sent.
+	* Form buttons
+		* After a user inputs the requested information, button allows the user to put that information into action.
+		* _Submit input_ - <input type="submit" name="submit" value="send">
+		* _Submit button_ - Same as input, just has an opening and closing tag. Text can be put in a button.
+	* Other cases 
+		* _Hidden input_ - A way to pass data to the server without displaying it to users. Hidden inputs are typically used for tracking codes, keys or other information that is sent.
+		* _File upload_ - <input type="file" name="file> 
+	* Organizing form elements
+		* Labels, fieldsets and legends.
+			* Labels provide caption or heading for form controls, tying them to the input.
+			* _<label for="id"> text </label>_ - Label for related form control.
+			* Fieldset group form controls and labels into organized sections  like a section element.
+			* They are a block-level element that wrap related elements in it and have a default border around it.
+			* Used within a <form> box.
+			* Legend provides the caption or heading for the <fieldset> element. Wraps text describing the form control. 
+		* Disabled attribute - applying it will disable the form control from input. It would not be sent for processing.
+		* Placeholder attribute - to give a hint to textarea and input element of what to enter. Will dissappear once the control is clicked in.
+		* 
