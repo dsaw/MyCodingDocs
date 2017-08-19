@@ -278,4 +278,19 @@
 			* Legend provides the caption or heading for the <fieldset> element. Wraps text describing the form control. 
 		* Disabled attribute - applying it will disable the form control from input. It would not be sent for processing.
 		* Placeholder attribute - to give a hint to textarea and input element of what to enter. Will dissappear once the control is clicked in.
-		* 
+		* Required attribute - enforces the given input element to be compulsory. if the form control does not have a value, an error message is displayed.
+			* validation also occurs specific to a control's type.
+
+
+* ### Building Tables
+	* Use <table> to initialise the element on the page.
+	* <tr> table row may be added using this element
+	* <td> Data cells are added to this table 
+	* <th> is like <td> except it has semantic value as a table header
+		* the _scope_ attribute immensely helps screen readers and assistive technologies.
+	*  <caption>, <thead>, <tbody>, and <tfoot>
+	* Two properties for tables border-collapse, border-spacing.
+	
+	
+	* Align text vertically in inline or table-cell elements using _vertical-align_ property. We set it to top, bottom, middle 
+	*
