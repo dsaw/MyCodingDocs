@@ -23,7 +23,8 @@
 
 * _git pull origin master_ - Pulls down any changes from remote repo origin to local repo. The master branch will be pulled down and merged in to the current working branch. Opposite to git push.
 	
-* _git diff HEAD_ - Displays the differences between any two files, commits, index and commits or even the working directory and commit. HEAD denotes the last commit performed which is compared with the changes in the working tree
+* _git diff HEAD_ - Displays the differences between any two files, commits, index and commits or even the working directory and commit.
+					HEAD denotes the last commit performed which is compared with the changes in the working tree
 
 * _git diff --staged_ - Displays the differences between changes in the staging area and the commit specified. By default, assumes HEAD.
 
