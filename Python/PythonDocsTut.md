@@ -148,7 +148,7 @@
 			* Avoids accidental module name clashes.
 			* Initialisation code can be added.
 		* _import sound.effects.echo_ - Imports submodule, which is referenced using whole name.
-		* _ from sound.effects import echo_ - Also imports submodule, but  no need to reference the whole prefix.
+		* _ from sound.effects import echo_ - Also imports submodule, but no need to reference the whole prefix.
 		* Also possible to import the function or variable directly.
 		
 		* Form _from package import item_ - item could be submodule or subpackage or even a function,variable or class defined in a module.
@@ -165,6 +165,122 @@
 	
 	
 * ### Input and Output
+	* There are two ways of printing strings that are:
+		* Doing string slicing and concatenation yourself. Like methods on string objects.
+		* Formatting string literals or the str.format() method.
+		
+	* Python can convert any values to string using _str()_ or _repr()_ method.
+		* _str()_ - Returns a fairly human-readable representation of the string
+		* _repr()_ - Returns a interpreter-readable representation
+		* For some objects like lists and dictionaries, repr and str is the same.
+		* For strings they are different.
+	
+	* ## String methods
+		* _str.rjust(n)_ - Right justifies the string in fields of length n.
+		* _str.ljust(n)_ - Left justifies the string in fields of length n.
+		* _str.center(n)_  -Centers the string like before.
+		* Note if str is longer than n, it is returned as is.
+		* _str.zfill(n)_ - Fills the left with 0s. Also recognizes + and - signs.
+		
+	
+	* ## Basic format string usage
+		* _" xxxx {0} {1}".format(m,n)" - passes in positional arguments accessed using index.
+		* _" xxxx {k} {m}".format(k=1,m=2)" - keyword arguments accessed using keys.
+		* _" xxxx {['color']} ".format(dct)" - Dictionary is passed in then its value is accessed using the square bracket notation.
+		* _" xxx {!a} {!s} {!r} .".format(a,b,c)" - _!a_, _!s_, _!r_ will convert the value to ascii, string, repr respectively.
+		* _"string.. {:3d} {:3.5f}" - format specifier indicates the number of characters to be printed 
+		 
+	* ## Reading and writing files
+		* _open(filename,mode)_ - it returns a file object opened in modes like 'r','w','a'.
+		* Files are opened in text mode or binary mode.
+			* Text mode have strings stored in specific encodings.
+			* In binary mode, data is read and written in the form of byte objects.
+			
+	* ## Reading and writing structured data using json.
+		* Uses json libraries to serialize and deserialize objects.
+			* Convert data hierarchies to string representations. Process is called serializing.
+			* Reconstructing the data from the string representation is called deserializing.
+		* _json.dumps(obj)_ - Returns a json representation of the object (lists,dictionaries)
+		* _json.dump(f,obj)_ - Same as dumps, just stores the representation in file object f.
+		* _x = json.load(f)_ - Decodes the data in file and returns the object.
+		* Difficult to handle arbitrary class instances.
+		
+		
+* ### Errors & Exceptions
+	* Two distinct types of errors:
+		* Syntax Errors : also known as parsing errors are the most common.
+		* Exceptions: errors detected during execution that are usually not fatal and are handled by programs
+		
+	* Exceptions can be handled by _try...except_ statements:
+		* The try clause is executed.
+		* If no exception is caused, the execution of try is finished.
+		* If exception occurs, the corresponding except statement clause is executed.
+		* If no such except clause exists that handles the corresponding exception class, the exception is passed on to outer try statements.
+			If no handler is found, it is an **unhandled exception** and the execution stops.
+		
+		* Note the class in an except clause is compatible with a class if it is the same class or the base class.
+		* _Else_ clause will be executed if no exception was raised.
+		* _finally_ clause will be executed no matter whether exception was raised or not.
+		* If an exception is raised but no corresponding handler is there, _finally_ clause is executed after which the exception is raised.
+		
+	* Exception instances:
+		* The exception object has its arguments stored in _inst.arg_.
+		* _ print(inst)_ - will print the arguments directly as _str_ is returned. Can be overriden in other subclasses.
+	* Raise exceptions
+		* _ raise ValueError_ - will throw an exception instance. No brackets required.
+		* _ except Error: raise _ - Simplet form will re-raise the actual exception of the clause.
+		
+	* User defined exceptions:
+		* Programs may name their own exceptions by creating a new exception class. They should be derived from _Exception_ class.
+	* With statement:
+		* Block of code can be run and any resource opened is released promptly when the 'with' block is executed.
+		* Commonly used for closing file objects.
+		
+		
+* ### Classes
 
-		
-		
+		* All members are _public_ and methods are _virtual_!
+		* Classes can be modified at runtime. 
+		* Objects have individuality and multiple objects can be bound to multiple names can be bound to the same object.
+			Also known as aliasing.
+	* ## Scope and Namespaces
+		* Namespace is a mapping from names to objects in Python.
+			* Implemented as a _dict_, though could change in future.
+			* When a class definition is read, module is executed,function is called, corresponding new namespaces are defined promptly.
+			* Any assignment of a variable will update it in the corresponding namespaces.
+			* There is a namespace of built in variables called built-in that exists in the lifetime of the Python interpreter.
+			* Lifetime of namespaces vary: A function namespace is defined during the first time the function is entered and deleted when function returns or exception is raised not handled by the function.
+		* Scope is a textual region in Python where namespace is directly accessible i.e referenced without qualification.
+			* Atleast three scopes exist at one point in a program
+				* Innermost local scope, enclosing scopes and global scope(module)
+				* Any variable handling happens in the local scope, unless _nonlocal_ statement is used, in which case the name is rebound in the outer scope.
+					Similarly for the _global_ statement, the module level names are bound.
+					* Non-local names are read-only.
+			* Scopes are generated statically, but searched dynamically.
+				* innermost scope, contains local names
+				* scopes of enclosing functions, which are started with the nearest enclosing scope.
+				* next-to-last scope, current modules global names.
+				* outermost scope contains built-in names.
+			* _del x_ removes the binding from the namespace referenced by the local scope.
+		* Class definition syntax
+			* _class ClassName:
+				<stmt-1>
+				...
+				<stmt-n>
+				_
+			* Like a function definition, has to be executed.
+			* When a class definition is entered, a new namespace is created and used as  a local scope.
+			* When a class definition is exited, a class object is created.
+		* Class objects support two kinds of operations: attribute references & instantiation.
+			* Instantiation involves calling the class object like a parameterless function.
+				* _ c = MyClass()_ - The _init_ method is called with the newly created object with arguments passed to that method.
+			* Any valid attribute can be referred to when the attribute has been defined in the class definition.
+		* Two kinds of attributes, data attributes and methods. A method is a function that 'belongs' to an object.
+			* myclass.f is a function, while x.f is a method. Method object can be stored away in a variable.
+			* A method _x.f()_ is called as _Class.f(x)_, where the first argument is the instance variable itself.
+		* Two kinds of variables, class variables and instance variables.
+			* Class variables shared by all instances in a class.
+			* Instance variables are only unique to each instance.
+			* Remember, a mutable object for a class variable has got quirks.
+		* Data attributes override method attributes for the same name, to prevent name conflicts
+			
