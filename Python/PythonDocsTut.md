@@ -10,7 +10,7 @@
 		* _-m modulename_  will execute the module with given name but no '.py'. Search sys.path for the *named module* and execute its contents as the __main__ module.
 		* - will read command  fromt the standard input. 
 		* _script_ will execute the code contained in script. It should be a filesystem path or a directory containing a __main__.py file
-	* _-i _ option can be used when executing module or script to enter interactive mode after execution is complete.
+	* _-i_ option can be used when executing module or script to enter interactive mode after execution is complete.
 	* Arguments can be passed and are stored in sys.argv. 
 		* sys.argv[0] contains -c,loaded module path, - and empty string for -c command, -m, - option and no arguments.
 		* sys.argv[0] is the script name for script loading option.
@@ -59,7 +59,7 @@
 			* Next lines have more details like calling conventions, side effects etc.
 			* Tools that process docstring check the amount of whitespace in the second line and set as the benchmark.
 				The following lines indent is stripped off by this amount.
-			* _func.__doc__ _ is the docstring.
+			* _func.__doc___ is the docstring.
 		
 		* ** Functional annotations**
 			* Optional metadata information about the data types of parameters and function return types.
@@ -79,7 +79,7 @@
 		
 	* ## Tuple
 		* Immutable sequence data type - hetereogenous sequence of elements that are accessed via unpacking.
-		* Sequence unpacking - x,y,z = t
+		* Sequence unpacking - _x,y,z = t_
 		* One element tuple - _(obj,)_
 	* ## List
 		* Mutable seqeunce type - accessed via iteration
@@ -94,7 +94,7 @@
 	* ## Dictionary
 		* It stores a unordered collection of key value pairs.
 		* The keys should be **immutable** i.e. tuples with immutable elements, strings are allowed but not lists!
-		* Syntax to define a new dict - _ d = dict()_ and _ d = {} _
+		* Syntax to define a new dict - _d = dict()_ and _d = {}_
 			* Sometimes, string keys can be specified like keyword arguments.
 			
 		* It is an error to extract a value of a non-existent key.
@@ -111,7 +111,7 @@
 		
 	* ## Comparisons 
 		* _in_ and _not in_ are allowed to be used in _if_ and _while_ statements.
-		* _ is, is not_ compare whether two objects are equal. Mainly for mutable objects like lists.
+		* _is, is not_ compare whether two objects are equal. Mainly for mutable objects like lists.
 		* _and_ & _or_ are short circuit operators in boolean expressions. 
 			* If not used with booleans, the last evaluated argument in the expression is returned.
 			
@@ -159,9 +159,9 @@
 	* ## Import * from package
 		* By default, it will import all modules listed in _ __all__ _ in the __init__.py file of the package.
 			* _from sound.effects import *_ --> _sound/effects/__init__.py 
-		* #If __all__ not defined
+		* If __all__ not defined
 			* Imports the package and all names defined in the package, also includes submodules imported.
-		* #Import * is bad practise! Avoid using it in production code.
+		* Import * is bad practise! Avoid using it in production code.
 	
 	
 * ### Input and Output
@@ -184,11 +184,11 @@
 		
 	
 	* ## Basic format string usage
-		* _" xxxx {0} {1}".format(m,n)" - passes in positional arguments accessed using index.
-		* _" xxxx {k} {m}".format(k=1,m=2)" - keyword arguments accessed using keys.
-		* _" xxxx {['color']} ".format(dct)" - Dictionary is passed in then its value is accessed using the square bracket notation.
-		* _" xxx {!a} {!s} {!r} .".format(a,b,c)" - _!a_, _!s_, _!r_ will convert the value to ascii, string, repr respectively.
-		* _"string.. {:3d} {:3.5f}" - format specifier indicates the number of characters to be printed 
+		* _" xxxx {0} {1}".format(m,n)"_ - passes in positional arguments accessed using index.
+		* _" xxxx {k} {m}".format(k=1,m=2)"_ - keyword arguments accessed using keys.
+		* _" xxxx {['color']} ".format(dct)"_ - Dictionary is passed in then its value is accessed using the square bracket notation.
+		* _" xxx {!a} {!s} {!r} .".format(a,b,c)"_ - _!a_, _!s_, _!r_ will convert the value to ascii, string, repr respectively.
+		* _"string.. {:3d} {:3.5f}"_ - format specifier indicates the number of characters to be printed 
 		 
 	* ## Reading and writing files
 		* _open(filename,mode)_ - it returns a file object opened in modes like 'r','w','a'.
@@ -238,7 +238,6 @@
 		
 		
 * ### Classes
-
 		* All members are _public_ and methods are _virtual_!
 		* Classes can be modified at runtime. 
 		* Objects have individuality and multiple objects can be bound to multiple names can be bound to the same object.
