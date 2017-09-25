@@ -272,7 +272,7 @@
 			* When a class definition is exited, a class object is created.
 		* Class objects support two kinds of operations: attribute references & instantiation.
 			* Instantiation involves calling the class object like a parameterless function.
-				* _ c = MyClass()_ - The _init_ method is called with the newly created object with arguments passed to that method.
+				* _c = MyClass()_ - The _init_ method is called with the newly created object with arguments passed to that method.
 			* Any valid attribute can be referred to when the attribute has been defined in the class definition.
 		* Two kinds of attributes, data attributes and methods. A method is a function that 'belongs' to an object.
 			* myclass.f is a function, while x.f is a method. Method object can be stored away in a variable.
@@ -281,5 +281,14 @@
 			* Class variables shared by all instances in a class.
 			* Instance variables are only unique to each instance.
 			* Remember, a mutable object for a class variable has got quirks.
-		* Data attributes override method attributes for the same name, to prevent name conflicts
+		* Data attributes override method attributes for the same name, to prevent name conflicts. A convention should be used to avoid confusion
+		* The first argument is called __self__ of any method. Not necessary that the attribute be a function be defined in the class body.
+		* ## Inheritance
+			* Base class should be defined in a scope containing the derived class definition.
+			* _class derivedClass(BaseClass):
+				pass_
+			* Derived method will override base class methods of the same name. All methods are virtual
+			* _BaseClassName.methodname(self,arguments)_ will help call superclass method to extend the behaviour.
+			* Two functions to work with inheritance. _isinstance()_ to check an instance's type. _issubclass()_ to check class inheritance.
 			
+		
