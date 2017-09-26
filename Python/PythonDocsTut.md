@@ -290,5 +290,9 @@
 			* Derived method will override base class methods of the same name. All methods are virtual
 			* _BaseClassName.methodname(self,arguments)_ will help call superclass method to extend the behaviour.
 			* Two functions to work with inheritance. _isinstance()_ to check an instance's type. _issubclass()_ to check class inheritance.
-			
-		
+		* ## Multiple inheritance 
+			* Class can inherit from multiple base classes. 
+			* The search order for the simplest classes is left-to-right, depth-first, not searching in the same class twice.
+			* The method resolution order changes dynamically. Approach is known as *call-next-method*.
+				* The search algorithm linearizes the search order in such a way that the left-to-right order is preserved ,that calls each method only once and is monotonic.
+				* Monotonicity means the class could be subclassed without affecting the order of the parent classes.
