@@ -296,3 +296,27 @@
 			* The method resolution order changes dynamically. Approach is known as *call-next-method*.
 				* The search algorithm linearizes the search order in such a way that the left-to-right order is preserved ,that calls each method only once and is monotonic.
 				* Monotonicity means the class could be subclassed without affecting the order of the parent classes.
+		* ## Name mangling
+			* To simulate private variables, *__localvar* is defined which is replaced to *classname__localvar*. 
+			* It is treated as a non-public part of the API. 
+			* Still can be accessed for debugging etc.
+			* Used to subclass methods but not break intraclass method calls 
+		
+		*  # Iterators
+			* An idiom to loop over container objects.
+				* A container object generates an _iterator_ on calling the _iter()_ method on it.
+				* Iterator object has __next__ method defined, which returns the next item in the container.
+				* When the container is exhausted, raises the _StopIterator_ exception
+		
+		* 	# Generators
+			* Similar to Iterator, except it returns data using _yield_ statement.
+			* Everytime _next()_ is called on it, it resumes where it last left off, with local variables intact.
+			* __iter__ and __next__ is generated automatically.
+			* Aka lazy iterator
+		
+			* Generator expression are a succinct form of generators that are using a syntax similar to list comprehensions
+				* _()_ used instead of _{}_
+				* More compact than generators but less versatile.
+				* More memory friendly than list comprehensions.
+				* Eg: sum(i*i for i in range(10))
+				
