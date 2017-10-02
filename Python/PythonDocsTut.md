@@ -82,7 +82,7 @@
 		* Sequence unpacking - _x,y,z = t_
 		* One element tuple - _(obj,)_
 	* ## List
-		* Mutable seqeunce type - accessed via iteration
+		* Mutable sequence type - accessed via iteration
 		
 	* ## Set
 		* Unordered collection with no duplicate elements. Basic uses are membership testing and eliminating duplicate entries.	
@@ -245,7 +245,7 @@
 	* ## Scope and Namespaces
 		* Namespace is a mapping from names to objects in Python.
 			* Implemented as a _dict_, though could change in future.
-			* When a class definition is read, module is executed,function is called, corresponding new namespaces are defined promptly.
+			* When a class definition is read, module is executed, function is called, corresponding new namespaces are defined promptly.
 			* Any assignment of a variable will update it in the corresponding namespaces.
 			* There is a namespace of built in variables called built-in that exists in the lifetime of the Python interpreter.
 			* Lifetime of namespaces vary: A function namespace is defined during the first time the function is entered and deleted when function returns or exception is raised not handled by the function.
@@ -319,4 +319,12 @@
 				* More compact than generators but less versatile.
 				* More memory friendly than list comprehensions.
 				* Eg: sum(i*i for i in range(10))
+				
+* ### Virtual environment
+	* A virtual environment is a self-contained directory tree with a Python installation and its own packages for a project.
+		* It helps in working on projects with varying Python package requirements. One virtual environment package won't affect the rest of the machine.
+		* Different application can use different environments.
+	* # venv tool
+		* to initiliaze a new directory run _python3 -m venv dirname_
+		
 				
