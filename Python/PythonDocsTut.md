@@ -228,7 +228,7 @@
 		* _ print(inst)_ - will print the arguments directly as _str_ is returned. Can be overriden in other subclasses.
 	* Raise exceptions
 		* _ raise ValueError_ - will throw an exception instance. No brackets required.
-		* _ except Error: raise _ - Simplet form will re-raise the actual exception of the clause.
+		* _ except Error: raise _ - Simplest form will re-raise the actual exception of the clause.
 		
 	* User defined exceptions:
 		* Programs may name their own exceptions by creating a new exception class. They should be derived from _Exception_ class.
@@ -325,6 +325,16 @@
 		* It helps in working on projects with varying Python package requirements. One virtual environment package won't affect the rest of the machine.
 		* Different application can use different environments.
 	* # venv tool
-		* to initiliaze a new directory run _python3 -m venv dirname_
+		* to initialize a new directory run _python3 -m venv dirname_. This will create the dirname if it doesn't exist,  and also create directories inside it containing a copy of the Python interpreter & various supporting files.
+		* Activate a virtual environment :
+			* Windows: _tutorial-env\Scripts\activate.bat_
+			* Unix: _source tutorial-env/bin/activate_
+			
+			* Activating the virtual environment will switch into a shell's prompt and start up Python installation of the particular version.
+	* # Managing packages with pip
+		* We can install, upgrade and remove packages using pip. By default pip will install packages from PyPI.
+		*pip  has a number of subcommands like search, install, uninstall, freeze.
+		* A specified version package can be installed by - _ pip install request==2.7.0 _.
+		
 		
 				
