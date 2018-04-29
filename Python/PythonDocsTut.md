@@ -5,14 +5,14 @@
 * ### Invoking the interpreter
 	* The python interpreter is usually installed as /usr/local/bin/python3.6. Putting it in your Unix search path makes it possible to start by just typing 'python3'
 	* Typing an EOF character( Ctrl-D in Unix, Ctrl-Z on Windows) will exit the interpreter with zero exit status. Use 'quit()' alternatively.
-	* Python command line arguments  - python3 [ -c command | -m modulename | script | - ] [args]
-		* The _-c command_ option will execute the newline seperated command strings as Python code.
-		* _-m modulename_  will execute the module with given name but no '.py'. Search sys.path for the *named module* and execute its contents as the __main__ module.
-		* - will read command  fromt the standard input. 
+	* Python command line arguments  - python3 `[ -c command | -m modulename | script | - ] [args]`
+		* The `-c command` option will execute the newline seperated command strings as Python code.
+		* `-m modulename`  will execute the module with given name but no '.py'. Search sys.path for the *named module* and execute its contents as the __main__ module.
+		* It will read command  fromt the standard input. 
 		* _script_ will execute the code contained in script. It should be a filesystem path or a directory containing a __main__.py file
 	* _-i_ option can be used when executing module or script to enter interactive mode after execution is complete.
 	* Arguments can be passed and are stored in sys.argv. 
-		* sys.argv[0] contains -c,loaded module path, - and empty string for -c command, -m, - option and no arguments.
+		* sys.argv[0] contains -c, loaded module path, - and empty string for -c command, -m, - option and no arguments.
 		* sys.argv[0] is the script name for script loading option.
 	* When commands are read from the tty, said to be in interactive mode
 	* By default, source code encodings are in UTF-8. Can be changed by specifying _# -*- coding: encoding -*-_ in Python file.
@@ -24,7 +24,7 @@
 	* Raw string - Use _r'dev/e'_, the string is printed as is without escaping.
 	* String literals - use '''...''' or """...""" that will _span multiple lines. Add \ to not add a newline when printing a string.
 	* _+_ concatenation operator and string literals concatenate automatically with 'Py' 'thon' = 'Python'
-	* *String subscript operator* use str[first:last] where the str[first:last-1] is printed.
+	* *String subscript operator* use `str[first:last]` where the `str[first:last-1]` is printed.
 	* String is immutable
 	
 	* Lists
@@ -43,8 +43,8 @@
 		* Positional arguments should be mentioned before the keyword arguments.
 		* _*name_ argument accepts a tuple of a list of keyword arguments specified after the formal parameter list. Similarly __**kdict__ accepts a dictionary of keyword value list mentioned after the formal parameter list.
 			* Arbitrary argument lists are described as above. They are scooped up after the normal paramaters are passed in (positional and keyword arguments).
-		* _Unpacking arg lists_ - A tuple can be passed in a function call and unpacked into separate arguments by _funcname(op1,*tup)_
-			* Similarly, dictionaries can be unpacked using _ **dict _ operator.
+		* _Unpacking arg lists_ - A tuple can be passed in a function call and unpacked into separate arguments by `funcname(op1,*tup)`
+		 	* Similarly, dictionaries can be unpacked using _ **dict _ operator.
 		
 		* **Lambda functions**
 			* These are function objects that have no function name associated with it.
