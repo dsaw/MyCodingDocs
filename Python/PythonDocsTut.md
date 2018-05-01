@@ -44,7 +44,7 @@
 		* _*name_ argument accepts a tuple of a list of keyword arguments specified after the formal parameter list. Similarly __**kdict__ accepts a dictionary of keyword value list mentioned after the formal parameter list.
 			* Arbitrary argument lists are described as above. They are scooped up after the normal paramaters are passed in (positional and keyword arguments).
 		* _Unpacking arg lists_ - A tuple can be passed in a function call and unpacked into separate arguments by `funcname(op1,*tup)`
-		 	* Similarly, dictionaries can be unpacked using _ **dict _ operator.
+		 	* Similarly, dictionaries can be unpacked using _**dict _ operator.
 		
 		* **Lambda functions**
 			* These are function objects that have no function name associated with it.
@@ -59,12 +59,12 @@
 			* Next lines have more details like calling conventions, side effects etc.
 			* Tools that process docstring check the amount of whitespace in the second line and set as the benchmark.
 				The following lines indent is stripped off by this amount.
-			* _func.__doc___ is the docstring.
+			* `func.__doc__` is the docstring.
 		
 		* ** Functional annotations**
 			* Optional metadata information about the data types of parameters and function return types.
 			* Eg: `def sum(x : int, who : str) -> int: ...`
-			* Can be accessed with _sum.__annotations _. It is a dictionary of parameters as keys and types as values.
+			* Can be accessed with `sum.__annotations__`. It is a dictionary of parameters as keys and types as values.
 
 
 * ### Data structures in Python
@@ -79,14 +79,14 @@
 		
 	* #### Tuple
 		* Immutable sequence data type - hetereogenous sequence of elements that are accessed via unpacking.
-		* Sequence unpacking - _x,y,z = t_
-		* One element tuple - _(obj,)_
+		* Sequence unpacking - `x,y,z = t`
+		* One element tuple - `(obj,)`
 	* #### List
 		* Mutable sequence type - accessed via iteration
 		
 	* #### Set
 		* Unordered collection with no duplicate elements. Basic uses are membership testing and eliminating duplicate entries.	
-		* Sets are specified using _set()_, NOT _{}_ which are used for dict types.
+		* Sets are specified using `set()`, NOT _{}_ which are used for dict types.
 		* Like list comprehensions, set comprehensions are supported too.
 			* Eg: ` s = {x for x in range(20)}`
 			
@@ -156,7 +156,7 @@
 				* If not found, raises `ImportError`.
 		* `import item.subitem.subsubitem` - all items except last item should be a package. Last item can be a module or package.
 		
-	* #### Import * from package
+	* #### Import all names from package
 		* By default, it will import all modules listed in _ __all__ _ in the __init__.py file of the package.
 			* `from sound.effects import *` --> _sound/effects/__init__.py 
 		* If __all__ not defined
@@ -238,38 +238,35 @@
 		
 		
 * ### Classes
-		* All members are _public_ and methods are _virtual_!
-		* Classes can be modified at runtime. 
-		* Objects have individuality and multiple objects can be bound to multiple names can be bound to the same object.
-			Also known as aliasing.
+	* All members are _public_ and methods are _virtual_!
+	* Classes can be modified at runtime. 
+	* Objects have individuality and multiple objects can be bound to multiple names can be bound to the same object.Also known as aliasing.
 	* #### Scope and Namespaces
 		* Namespace is a mapping from names to objects in Python.
-			* Implemented as a _dict_, though could change in future.
-			* When a class definition is read, module is executed, function is called, corresponding new namespaces are defined promptly.
-			* Any assignment of a variable will update it in the corresponding namespaces.
-			* There is a namespace of built in variables called built-in that exists in the lifetime of the Python interpreter.
-			* Lifetime of namespaces vary: A function namespace is defined during the first time the function is entered and deleted when function returns or exception is raised not handled by the function.
+		* Implemented as a _dict_, though could change in future.
+		* When a class definition is read, module is executed, function is called, corresponding new namespaces are defined promptly.
+		* Any assignment of a variable will update it in the corresponding namespaces.
+		* There is a namespace of built in variables called built-in that exists in the lifetime of the Python interpreter.
+		* Lifetime of namespaces vary: A function namespace is defined during the first time the function is entered and deleted when function returns or exception is raised not handled by the function.
 		* Scope is a textual region in Python where namespace is directly accessible i.e referenced without qualification.
-			* Atleast three scopes exist at one point in a program
-				* Innermost local scope, enclosing scopes and global scope(module)
-				* Any variable handling happens in the local scope, unless _nonlocal_ statement is used, in which case the name is rebound in the outer scope.
-					Similarly for the _global_ statement, the module level names are bound.
-					* Non-local names are read-only.
-			* Scopes are generated statically, but searched dynamically.
-				* innermost scope, contains local names
-				* scopes of enclosing functions, which are started with the nearest enclosing scope.
-				* next-to-last scope, current modules global names.
-				* outermost scope contains built-in names.
-			* `del x` removes the binding from the namespace referenced by the local scope.
-		* Class definition syntax
-			* ```class ClassName:
-				<stmt-1>
-				...
-				<stmt-n>
-				```
-			* Like a function definition, has to be executed.
-			* When a class definition is entered, a new namespace is created and used as  a local scope.
-			* When a class definition is exited, a class object is created.
+		* Atleast three scopes exist at one point in a program
+		* Innermost local scope, enclosing scopes and global scope(module)
+		* Any variable handling happens in the local scope, unless _nonlocal_ statement is used, in which case the name is rebound in the outer scope. Similarly for the _global_ statement, the module level names are bound.
+		* Non-local names are read-only.
+		* Scopes are generated statically, but searched dynamically.
+			* innermost scope, contains local names
+			* scopes of enclosing functions, which are started with the nearest enclosing scope.
+			* next-to-last scope, current modules global names.
+			* outermost scope contains built-in names.
+		* `del x` removes the binding from the namespace referenced by the local scope.
+	* Class definition syntax
+		* ```class ClassName:
+			<stmt-1>
+			...
+			<stmt-n>```
+		* Like a function definition, has to be executed.
+		* When a class definition is entered, a new namespace is created and used as  a local scope.
+		* When a class definition is exited, a class object is created.
 		* Class objects support two kinds of operations: attribute references & instantiation.
 			* Instantiation involves calling the class object like a parameterless function.
 				* `c = MyClass()` - The _init_ method is called with the newly created object with arguments passed to that method.
@@ -282,7 +279,7 @@
 			* Instance variables are only unique to each instance.
 			* Remember, a mutable object for a class variable has got quirks.
 		* Data attributes override method attributes for the same name, to prevent name conflicts. A convention should be used to avoid confusion
-		* The first argument is called __self__ of any method. Not necessary that the attribute be a function be defined in the class body.
+		* The first argument is called `__self__` of any method. Not necessary that the attribute be a function be defined in the class body.
 		* #### Inheritance
 			* Base class should be defined in a scope containing the derived class definition.
 			* ```class derivedClass(BaseClass):
@@ -297,7 +294,7 @@
 				* The search algorithm linearizes the search order in such a way that the left-to-right order is preserved ,that calls each method only once and is monotonic.
 				* Monotonicity means the class could be subclassed without affecting the order of the parent classes.
 		* #### Name mangling
-			* To simulate private variables, *__localvar* is defined which is replaced to *classname__localvar*. 
+			* To simulate private variables, `__localvar` is defined which is replaced to `classname__localvar`. 
 			* It is treated as a non-public part of the API. 
 			* Still can be accessed for debugging etc.
 			* Used to subclass methods but not break intraclass method calls 
