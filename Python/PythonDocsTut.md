@@ -137,14 +137,14 @@
 		* If module not found, returns _ModuleNotFoundError_
 	* #### Compiled Python files
 		* To speed up loading of modules, Python supports caching of compiled modules.
-		* They are files with _.pyc_ extension, stored in __pycache__ directory.
+		* They are files with `.pyc` extension, stored in __pycache__ directory.
 	* #### Standard Modules
-		* __dir()__ will return the names the modules defines.
-		* __builtins_ module will list the names of built-in functions and variables.
+		* `__dir()__` will return the names the modules defines.
+		* `__builtins__` module will list the names of built-in functions and variables.
 		
 	* #### Packages
 		* It is a way of structuring Python's module namespace by using "dotted module names".
-		* __init.py__ is compulsory in a package for treating the directories as subpackages.
+		* `__init.py__` is compulsory in a package for treating the directories as subpackages.
 			* Avoids accidental module name clashes.
 			* Initialisation code can be added.
 		* `import sound.effects.echo` - Imports submodule, which is referenced using whole name.
@@ -297,13 +297,13 @@
 			* To simulate private variables, `__localvar` is defined which is replaced to `classname__localvar`. 
 			* It is treated as a non-public part of the API. 
 			* Still can be accessed for debugging etc.
-			* Used to subclass methods but not break intraclass method calls 
+			* Used to subclass methods but not break intraclass method calls.
 		
 		* #### Iterators
 			* An idiom to loop over container objects.
 				* A container object generates an _iterator_ on calling the _iter()_ method on it.
 				* Iterator object has __next__ method defined, which returns the next item in the container.
-				* When the container is exhausted, raises the _StopIterator_ exception
+				* When the container is exhausted, raises the `StopIterator` exception
 		
 		* #### Generators
 			* Similar to Iterator, except it returns data using _yield_ statement.
@@ -311,12 +311,15 @@
 			* __iter__ and __next__ is generated automatically.
 			* Aka lazy iterator
 		
-			* Generator expression are a succinct form of generators that are using a syntax similar to list comprehensions
+			* Generator expression are a succinct form of generators that use a syntax similar to list comprehensions
 				* _()_ used instead of _{}_
 				* More compact than generators but less versatile.
 				* More memory friendly than list comprehensions.
 				* Eg: `sum(i*i for i in range(10))`
-				
+		* #### Class and static methods
+			* Class method is defined with first argument as `cls` instead of `self`. The class type is passed in.
+			* Class method is common to the whole class type. It can be called `classanme.classmethod()` and cannot modify any instance variables. 
+		
 * ### Virtual environment
 	* A virtual environment is a self-contained directory tree with a Python installation and its own packages for a project.
 		* It helps in working on projects with varying Python package requirements. One virtual environment package won't affect the rest of the machine.
