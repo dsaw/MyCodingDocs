@@ -15,7 +15,7 @@
 		* sys.argv[0] contains -c, loaded module path, - and empty string for -c command, -m, - option and no arguments.
 		* sys.argv[0] is the script name for script loading option.
 	* When commands are read from the tty, said to be in interactive mode
-	* By default, source code encodings are in UTF-8. Can be changed by specifying _# -*- coding: encoding -*-_ in Python file.
+	* By default, source code encodings are in UTF-8. Can be changed by specifying `# -*- coding: encoding -*-` in Python file.
 	
 * ### Basics of Python
 	* Two ways to represent strings:
@@ -36,7 +36,7 @@
 		* Function is defined by _def funcname(param1,param2...): functionbody_
 		* First line of function body can contain a string literal called docstring.
 		* When entering a function for the first time, the arguments are stored as local variables in a new symbol table.
-			* All variable references in a function first look in the symbol table,then the enclosing function symbol table, and so on till the global symbol table and then the table of built-in names.
+			* All variable references in a function first look in the symbol table, then the enclosing function symbol table and so on till the global symbol table and then the table of built-in names.
 			* All parameters are passed as call by object reference.
 		* Default arguments are specified by adding a value after following a '=' 
 		* Keyword arguments are specified by 'kwarg=val'
@@ -44,28 +44,24 @@
 		* _*name_ argument accepts a tuple of a list of keyword arguments specified after the formal parameter list. Similarly __**kdict__ accepts a dictionary of keyword value list mentioned after the formal parameter list.
 			* Arbitrary argument lists are described as above. They are scooped up after the normal paramaters are passed in (positional and keyword arguments).
 		* _Unpacking arg lists_ - A tuple can be passed in a function call and unpacked into separate arguments by `funcname(op1,*tup)`
-		 	* Similarly, dictionaries can be unpacked using _**dict _ operator.
-		
-		* **Lambda functions**
+		 	* Similarly, dictionaries can be unpacked using `**dict` operator.		
+		* Lambda functions
 			* These are function objects that have no function name associated with it.
 			* They are restricted to a single expression and can use names from the _containing scope_.
 			* Semantically identical to a function definition.
 			* Eg: `lambda x: x+n`
-			* Use: used as a function callback, return specific functions
-			
-		* **Multi-line docstring**
+			* Used as a function callback, return specific functions.			
+		* Multi-line docstring
 			* First line is a short,concise description of what the function does
 			* Second line should be blank.
 			* Next lines have more details like calling conventions, side effects etc.
 			* Tools that process docstring check the amount of whitespace in the second line and set as the benchmark.
 				The following lines indent is stripped off by this amount.
-			* `func.__doc__` is the docstring.
-		
-		* ** Functional annotations**
+			* `func.__doc__` is the docstring.		
+		* Functional annotations
 			* Optional metadata information about the data types of parameters and function return types.
 			* Eg: `def sum(x : int, who : str) -> int: ...`
 			* Can be accessed with `sum.__annotations__`. It is a dictionary of parameters as keys and types as values.
-
 
 * ### Data structures in Python
 	* #### List comprehensions
@@ -74,7 +70,6 @@
 		* Expression with one or more for loops and zero or more if conditions following it that act as filters. 
 		* Eg: `[ x**2 for x in v]`
 		* A  list comprehension has the for loop in the same order as the equivalent  nested for expression.
-		* # Nested List comprehensions
 		* _del_ statement will remove slices and also delete entire variables.
 		
 	* #### Tuple
@@ -82,7 +77,7 @@
 		* Sequence unpacking - `x,y,z = t`
 		* One element tuple - `(obj,)`
 	* #### List
-		* Mutable sequence type - accessed via iteration
+		* Mutable sequence type - accessed via iteration.
 		
 	* #### Set
 		* Unordered collection with no duplicate elements. Basic uses are membership testing and eliminating duplicate entries.	
@@ -96,7 +91,6 @@
 		* The keys should be **immutable** i.e. tuples with immutable elements, strings are allowed but not lists!
 		* Syntax to define a new dict - _d = dict()_ and _d = {}_
 			* Sometimes, string keys can be specified like keyword arguments.
-			
 		* It is an error to extract a value of a non-existent key.
 		* To get a sequence of keys / values, run _list(d.keys())_ / _list(d.values())_
 		* Use the _in_ operator to check if a key exists in the dictionary.
@@ -104,8 +98,7 @@
 		* Dictionaries can be looped over using the _items()_ method.
 			* Eg: `for k,v in d.items(): ...`
 		* Sequences can be looped over using the _enumerate()_ method.
-			* Eg: `for index, val in l.enumerate(): ...`
-			
+			* Eg: `for index, val in l.enumerate(): ...`			
 		* Multiple sequences can be paired together using the _zip()_ function.
 			* Eg: `for q,a in zip(qu,an): ...`
 		
