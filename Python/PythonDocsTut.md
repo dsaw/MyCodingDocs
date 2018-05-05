@@ -312,6 +312,8 @@
 		* #### Class and static methods
 			* Class method is defined with first argument as `cls` instead of `self`. The class type is passed in.
 			* Class method is common to the whole class type. It can be called `classanme.classmethod()` and cannot modify any instance variables. 
+			* Static methods are used to perform work that is related to the class. It does not require the class nor the instance. 
+			* Examples of static methods includes setting environment variables, changing attributes in another class etc.
 		
 * ### Virtual environment
 	* A virtual environment is a self-contained directory tree with a Python installation and its own packages for a project.
