@@ -23,8 +23,8 @@
 		* Enclosing double quotes - _"veg"_ Can enclose single quotes in it but double quotes and special characters need to be escaped.
 	* Raw string - Use _r'dev/e'_, the string is printed as is without escaping.
 	* String literals - use '''...''' or """...""" that will _span multiple lines. Add \ to not add a newline when printing a string.
-	* _+_ concatenation operator and string literals concatenate automatically with 'Py' 'thon' = 'Python'
-	* *String subscript operator* use `str[first:last]` where the `str[first:last-1]` is printed.
+	* _+_ is the concatenation operator and string literals concatenate automatically with 'Py' 'thon' = 'Python'
+	* String subscript operator use `str[first:last]` where the `str[first:last-1]` is printed.
 	* String is immutable
 	
 	* Lists
@@ -236,11 +236,11 @@
 	* Objects have individuality and multiple objects can be bound to multiple names can be bound to the same object.Also known as aliasing.
 	* #### Scope and Namespaces
 		* Namespace is a mapping from names to objects in Python.
-		* Implemented as a _dict_, though could change in future.
-		* When a class definition is read, module is executed, function is called, corresponding new namespaces are defined promptly.
+		* Implemented as a dictionary, though could change in future.
+		* When a class definition is read, the module is executed, function is called and corresponding new namespaces are defined promptly.
 		* Any assignment of a variable will update it in the corresponding namespaces.
 		* There is a namespace of built in variables called built-in that exists in the lifetime of the Python interpreter.
-		* Lifetime of namespaces vary: A function namespace is defined during the first time the function is entered and deleted when function returns or exception is raised not handled by the function.
+		* Lifetime of namespaces vary: A function namespace is defined during the first time the function is entered and deleted when function returns or exception is raised but not handled by the function.
 		* Scope is a textual region in Python where namespace is directly accessible i.e referenced without qualification.
 		* Atleast three scopes exist at one point in a program
 		* Innermost local scope, enclosing scopes and global scope(module)
@@ -253,10 +253,12 @@
 			* outermost scope contains built-in names.
 		* `del x` removes the binding from the namespace referenced by the local scope.
 	* Class definition syntax
-		* ```class ClassName:
+		* ```
+		  class ClassName:
 			<stmt-1>
 			...
-			<stmt-n>```
+			<stmt-n>
+		  ```
 		* Like a function definition, has to be executed.
 		* When a class definition is entered, a new namespace is created and used as  a local scope.
 		* When a class definition is exited, a class object is created.
@@ -275,8 +277,10 @@
 		* The first argument is called `__self__` of any method. Not necessary that the attribute be a function be defined in the class body.
 		* #### Inheritance
 			* Base class should be defined in a scope containing the derived class definition.
-			* ```class derivedClass(BaseClass):
-				pass```
+			  ```
+			  class derivedClass(BaseClass):
+				pass
+			  ```
 			* Derived method will override base class methods of the same name. All methods are virtual
 			* `BaseClassName.methodname(self,arguments)` will help call superclass method to extend the behaviour.
 			* Two functions to work with inheritance. `isinstance()` to check an instance's type. `issubclass()` to check class inheritance.
