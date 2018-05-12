@@ -328,12 +328,9 @@
 		* Activate a virtual environment:
 			* Windows: _tutorial-env\Scripts\activate.bat_
 			* Unix: _source tutorial-env/bin/activate_
-			
-			* Activating the virtual environment will switch into a shell's prompt and start up Python installation of the particular version.
+			* Activating the virtual environment will switch into a shell and start up Python of the particular version.
 	* #### Managing packages with pip
 		* We can install, upgrade and remove packages using pip. By default pip will install packages from PyPI.
 		* pip  has a number of subcommands like search, install, uninstall, freeze.
 		* A specified version package can be installed by `pip install request==2.7.0`.
 		
-		
-				
