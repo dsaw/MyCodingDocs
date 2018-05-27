@@ -89,10 +89,10 @@
 	* #### Dictionary
 		* It stores a unordered collection of key value pairs.
 		* The keys should be **immutable** i.e. tuples with immutable elements, strings are allowed but not lists!
-		* Syntax to define a new dict - _d = dict()_ and _d = {}_
+		* Syntax to define a new dict - `d = dict()` and `d = {}`
 			* Sometimes, string keys can be specified like keyword arguments.
 		* It is an error to extract a value of a non-existent key.
-		* To get a sequence of keys / values, run _list(d.keys())_ / _list(d.values())_
+		* To get a sequence of keys / values, run `list(d.keys())_ / _list(d.values())`
 		* Use the _in_ operator to check if a key exists in the dictionary.
 	* #### Looping techniques.
 		* Dictionaries can be looped over using the _items()_ method.
