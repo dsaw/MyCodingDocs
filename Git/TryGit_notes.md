@@ -12,7 +12,9 @@
 
 * `git add '*.txt' (wildcards)` - A wildcard character * will match zero or more characters in the directory. All files with '.txt' as the suffix will be matched and added to repo in this case.
 
-* `git log` - It displays all the commits executed and their information(author, time, message). A summary can be displayed too with --summary
+* `git log` - It displays all the commits executed and their information(author, time, message). 
+	* A summary can be displayed too with `--summary`
+	* Other useful flags : `--oneline`, `--graph`, `--patch`.
 
 * `git remote add origin repo-url` - Links a remote name 'origin' (or any specified name) to a remote repository.
 	* A remote repository could be the user's git repository, a fork or a different server.
@@ -43,6 +45,11 @@
 	* Merge conflicts can happen. Some files may have different changes in both the branches. You will have to choose the changes you want to keep by using merge tools.
 	* If you don't want to resolve the conflicts yet, run `git merge --abort` which will return the repo as it was before.
 	
+* `git rebase anotherbranch` - Rebases the commits of the current branch from the common ancestor onto the  tip of the target branch. 
+	* It is very similar to a merge, except the history of the repo is completely changed. Now only a linear series of commits are apparent.
+	* Conflicts may have to be resolved just like in merge.
+	* Interactive rebase with an `-i` flag supports options to modify the series of commits. You can reorder, squash them together, split into multiple commits, change individual commits and more. The rebase should be done on an ancestor of HEAD i.e. `git rebase -i HEAD~3`
+	
 * `git branch -d clean-up` - Delete the branch after merging.
 	* If branch is not merged and you have to delete it, add -d -f option.
 
@@ -51,3 +58,7 @@
 * `git fetch remoteref branch` - Fetches down any changes from remote repo to local repo. It will merge them like *git pull*, giving a chance to review it. Remote branches are updated.
 
 * `git revert commit` - Generates a new commit that undos the changes performed with respect to the specified commit. It will maintain the commit history unlike reset which will discard the commits after the specified commit **resetted** back to.
+
+* `git cherry-pick commit-hash` - Chooses commits from potentially different branches and applies them to HEAD. Multiple commits can be picked too.
+	* If you want to edit the changes first, pass `--no-commit` which will stage the changes introduced by commits.
+	
