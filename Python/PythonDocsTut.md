@@ -7,14 +7,14 @@
 	* Typing an EOF character( Ctrl-D in Unix, Ctrl-Z on Windows) will exit the interpreter with zero exit status. Use 'quit()' alternatively.
 	* Python command line arguments  - python3 `[ -c command | -m modulename | script | - ] [args]`
 		* The `-c command` option will execute the newline seperated command strings as Python code.
-		* `-m modulename`  will execute the module with given name but no '.py'. Search sys.path for the *named module* and execute its contents as the __main__ module.
+		* `-m modulename`  will execute the module with given name but no '.py'. Search sys.path for the *named module* and execute its contents as the `__main__` module. The argument can be a package, which will then look for a `__main__.py` file.
 		* It will read command  fromt the standard input. 
-		* _script_ will execute the code contained in script. It should be a filesystem path or a directory containing a __main__.py file
+		* _script_ will execute the code contained in script. It should be a filesystem path or a directory containing a `__main__.py` file
 	* _-i_ option can be used when executing module or script to enter interactive mode after execution is complete.
 	* Arguments can be passed and are stored in sys.argv. 
 		* sys.argv[0] contains -c, loaded module path, - and empty string for -c command, -m, - option and no arguments.
 		* sys.argv[0] is the script name for script loading option.
-	* When commands are read from the tty, said to be in interactive mode
+	* When commands are read from the tty, it is said to be in interactive mode
 	* By default, source code encodings are in UTF-8. Can be changed by specifying `# -*- coding: encoding -*-` in Python file.
 	
 * ### Basics of Python
