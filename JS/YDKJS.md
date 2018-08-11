@@ -10,3 +10,7 @@
       * Code inside a block can only access variables in its scope and the scope outside it. 
      
   * Javascript has the following built-in types: string, number, boolean, null and undefined, object and symbol in ES6. Only values have types in JS, variables are just containers.
+  * There are other types - `function` and `array`  but these can be thought of specialized subtypes of `object`
+  * Built-in types have associated methods to make operations like upper case conversion and setting precision.
+      * `str.toUpperCase() , num.toFixed()` - These work by calling the object wrapper types for these built-in ones - called "natives" and then calling the associated method. All these happen under the hood.     
+
