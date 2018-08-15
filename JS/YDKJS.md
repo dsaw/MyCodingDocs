@@ -7,10 +7,20 @@
   * To generate alert boxes, type out `alert(msg)`
   * To accept input from user, run `prompt(msg)`. The prompt will display a text box for user to fill in. Then the user input is returned as a string.
   * Defining a block also makes a *scope* with it aka *lexical scope*. A scope is a collection of variables and rules to show how to access those variables. 
-      * Code inside a block can only access variables in its scope and the scope outside it. 
+    * Code inside a block can only access variables in its scope and the scope outside it. 
      
   * Javascript has the following built-in types: string, number, boolean, null and undefined, object and symbol in ES6. Only values have types in JS, variables are just containers.
   * There are other types - `function` and `array`  but these can be thought of specialized subtypes of `object`
   * Built-in types have associated methods to make operations like upper case conversion and setting precision.
-      * `str.toUpperCase() , num.toFixed()` - These work by calling the object wrapper types for these built-in ones - called "natives" and then calling the associated method. All these happen under the hood.     
+    * `str.toUpperCase() , num.toFixed()` - These work by calling the object wrapper types for these built-in ones - called "natives" and then calling the associated method. All these happen under the hood.     
 
+ * ### Coercion
+   * Two types - implicit and explicit. Standard rules apply to coercion like any programming language.
+   * `NaN, -0, +0, "", null, undefined` are falsy values. Everything else like functions, objects, arrays are true.
+   * Two distinct forms of equality are there - `==` and `===`.
+     * `==` is checking for equality and allowing coercion. `===` does strict equality checking.
+     * If sure about what value types are being compared, then prefer `==`. It can improve readablity
+   * For arrays, objects the value of references are compared, not the actual contents.
+     * So two identical arrays will *not* be equal.
+   * Inequality forms like `>,>=,<,<=` will compare strings lexicographically.
+     * For expressions like ` 1 > "H" `, the string will be coerced into `NaN` which will return False.
