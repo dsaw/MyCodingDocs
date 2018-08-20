@@ -24,3 +24,7 @@
      * So two identical arrays will *not* be equal.
    * Inequality forms like `>,>=,<,<=` will compare strings lexicographically.
      * For expressions like ` 1 > "H" `, the string will be coerced into `NaN` which will return False.
+ * ### Function Scopes
+   * `var` keyword will define the variable in the current function scope or the global scope
+   * **Hoisting** will make sure the variable declaration is '*hoisted*' its usage when the code is compiled. The `var` declarations are processed first in the compile phase before the usages.
+ 
