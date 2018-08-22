@@ -27,4 +27,8 @@
  * ### Function Scopes
    * `var` keyword will define the variable in the current function scope or the global scope
    * **Hoisting** will make sure the variable declaration is '*hoisted*' its usage when the code is compiled. The `var` declarations are processed first in the compile phase before the usages.
- 
+   * #### Block Scopes
+     * Variables can be declared in blocks such as while loops using `let`. The variable can't be used outside the block.
+   
+* ### Strict mode
+   * `use strict` will ensure the code is put through the a tighter set of rules. This will improve code quality and optimization.
