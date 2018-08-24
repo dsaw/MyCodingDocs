@@ -32,3 +32,12 @@
    
 * ### Strict mode
    * `use strict` will ensure the code is put through the a tighter set of rules. This will improve code quality and optimization.
+* ### Functions as values
+   * Functions can be passed in like another variable. 
+   * For example `function si() {..}` - si is just another variable that refers to the function declaration.
+   * Functions could be thought as an expression. 
+   * **Anonymous** Functions have no name. Eg. `var si = function() {...}`.
+   * #### Immediately invoked function expressions
+     * Eg. `(function IIFE() {console.log(3);})();` - The function is called immediately after its declaration. The ending brackets are important!.
+   * #### Closures
+   
