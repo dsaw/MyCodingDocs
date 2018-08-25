@@ -34,6 +34,7 @@
 
 * `git checkout -- filename` - Updates the  corresponding files in working directory to the last commit(default) or index. Might remove the file too if no file in commit.
 	* -- option specifies no option to be added after that point. it makes clear the type of checkout command.
+	* `git checkout --ours/--theirs -- filepaths` - When faced with merge conflicts, there will be unmerged entries. Specify `ours` to choose the current branch's version or `theirs` to choose the other branch's one.
 	
 * `git branch branchname` - Creates a new branch. A branch is a separate copy of code that developers can work on for different features of the same project.
 
