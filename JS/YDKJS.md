@@ -40,4 +40,25 @@
    * #### Immediately invoked function expressions
      * Eg. `(function IIFE() {console.log(3);})();` - The function is called immediately after its declaration. The ending brackets are important!.
    * #### Closures
-   
+     * It is a feature with which functions can obtain 'closure' over variables in the enclosing scope, even after the enclosing function has completed execution.
+     * eg: ```
+           function makeAdder(x) {
+           function adder(y) { return y+x; };
+             return adder;
+           };
+           >> one = makeAdder(1);
+           >> two = makeAdder(2);
+           >> one(2) == two(2) ## False
+           ```
+           
+     * Above function will return the reference to the inner function. When it is called, it will remember the variable x and compute the result correctly even though `makeAdder` has already finished. 
+     * Closures are commonly used to implement the Module pattern in JS.
+* ### `this` Identifier
+  * `this` is *not* the function or the object itself like in other OOP languages.
+  * For eg: `function printVal() { console.log(this.val); }`
+    * Now what `this` depends on how `printVal` is called.
+      * `printVal();` - it is the global object in non-strict mode.
+      * `obj1.printVal();` - it refers to `obj1`
+      * `printVal.call(obj2);` - here it refers to `obj2`. The call method explicitly calls the function by setting `this` to the first argument.
+      * `new printVal();` - `this` is a empty object.
+* ###
