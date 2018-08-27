@@ -61,4 +61,9 @@
       * `obj1.printVal();` - it refers to `obj1`
       * `printVal.call(obj2);` - here it refers to `obj2`. The call method explicitly calls the function by setting `this` to the first argument.
       * `new printVal();` - `this` is a empty object.
-* ###
+* ### Prototype linkages
+  * All objects have a prototype reference. When a property is get which the object itself does not have, then its prototype is checked if it has. This goes on and on the prototype chain.
+  * Eg: `var b = {x:2}; var a = Object.create(b); a.y = 3; a.x`  a --> b --> Object.prototype --> null.
+  * The prototypes act as a fallback and are used to simulate inheritance. Note this should not be confused with OOP class concept!
+  * Each object by default points to the `Object.prototype` as its prototype.
+* ### Backwards Compatibility
