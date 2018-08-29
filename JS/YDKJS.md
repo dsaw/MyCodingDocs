@@ -64,6 +64,17 @@
 * ### Prototype linkages
   * All objects have a prototype reference. When a property is get which the object itself does not have, then its prototype is checked if it has. This goes on and on the prototype chain.
   * Eg: `var b = {x:2}; var a = Object.create(b); a.y = 3; a.x`  a --> b --> Object.prototype --> null.
-  * The prototypes act as a fallback and are used to simulate inheritance. Note this should not be confused with OOP class concept!
+  * The prototypes act as a fallback and are used to simulate inheritance and in a pattern called behaviour delegation. Note this should not be confused with OOP class concept!
   * Each object by default points to the `Object.prototype` as its prototype.
 * ### Backwards Compatibility
+  * To ensure older browsers can run latest version JS code, _polyfilling_ and _transpiling_ is performed.
+  * ### Polyfilling
+    * Newer features and functions can be run in old browsers by adding special code that is equivalent to that feature.
+    * Eg. `Number.NaN()` is only in ES6.
+  * ### Transpiling
+    * Newer syntax cannot be polyfilled. To run the new syntax in olde environments, a _transpiler_ is used which transforms and compiles the code.
+    * There are benefits such as better readability, optimizations.
+* ### Non JS
+  * Some parts widely used in JS programs are not controlled by the JS spec.
+  * Some DOM related manipulations are done using a `host object` which is not a JS object. It is implemented in C/C++.
+  * Eg. `console.log()`, `alert()` are thin API's for browser actions.
