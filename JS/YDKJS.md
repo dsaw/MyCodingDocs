@@ -72,7 +72,7 @@
     * Newer features and functions can be run in old browsers by adding special code that is equivalent to that feature.
     * Eg. `Number.NaN()` is only in ES6.
   * ### Transpiling
-    * Newer syntax cannot be polyfilled. To run the new syntax in olde environments, a _transpiler_ is used which transforms and compiles the code.
+    * Newer syntax cannot be polyfilled. To run the new syntax in older environments, a _transpiler_ is used which transforms and compiles the code.
     * There are benefits such as better readability, optimizations.
 * ### Non JS
   * Some parts widely used in JS programs are not controlled by the JS spec.
