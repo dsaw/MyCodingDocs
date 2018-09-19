@@ -21,5 +21,9 @@
   * *Lookups* are done by consulting from the innermost scopes to the enclosing scopes, one after the other till the global scope is consulted.
   * Remember that lookups are only performed on first class variables. When a property is accessed using dot notation, lookup is performed on the first identifier. On the rest, the property resolution is applied. Eg: `console.log()`.
   * ### Cheating lexical scope
-    * `eval` : Passing in declarations of variables as executable code in `eval` will modify the scope. This is a form of dynamic scope change. Eg: `eval('var a = 3')`.
-    
+     * `eval` : Passing in declarations of variables as executable code in `eval` will modify the scope. This is a form of dynamic scope change. Eg: `eval('var a = 3')`.
+     * `with` : The with statement block creates a whole new lexical scope out of the object passed in. It treats the properties of the object as variables in its own scope.
+     * Eg: `with(obj) { a:4; b:5};` - If the object doesn't have the given property, then normal LHS lookup is done. Those properties will be defined in the global scope.
+     * It is meant to be used as a shorthand for property references.
+  * ### Pitfalls of dynamic scope changing
+    * Using above constructs results in  reduced performance. Compiler uses optimizations when standard lexical scoping is used to speed up processing. However, whith the above it has to drop them and analyze code at runtime for scope changes. 
