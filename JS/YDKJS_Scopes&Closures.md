@@ -27,3 +27,4 @@
        * It is meant to be used as a shorthand for property references.
   * ### Pitfalls of dynamic scope changing
     * Using above constructs results in  reduced performance. Compiler uses optimizations when standard lexical scoping is used to speed up processing. However, whith the above it has to drop them and analyze code at runtime for scope changes. 
+* Function vs Block scope.
