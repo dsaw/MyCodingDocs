@@ -26,5 +26,7 @@
        * Eg: `with(obj) { a:4; b:5};` - If the object doesn't have the given property, then normal LHS lookup is done. Those properties will be defined in the global scope.
        * It is meant to be used as a shorthand for property references.
   * ### Pitfalls of dynamic scope changing
-    * Using above constructs results in  reduced performance. Compiler uses optimizations when standard lexical scoping is used to speed up processing. However, whith the above it has to drop them and analyze code at runtime for scope changes. 
+    * Using above constructs results in  reduced performance. Compiler uses optimizations when standard lexical scoping is used to speed up processing. However, with the above it has to drop them and analyze code at runtime for scope changes. 
 * Function vs Block scope.
+  * Javascript has both function and block based scope.
+  * Hiding of identifiers in different scope is based on the application of the least privilege principle.
