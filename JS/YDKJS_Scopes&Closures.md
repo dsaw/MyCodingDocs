@@ -30,3 +30,5 @@
 * Function vs Block scope.
   * Javascript has both function and block based scope.
   * Hiding of identifiers in different scope is based on the application of the least privilege principle.
+  * Only those identifiers should be exposed to the scope which are required for use. Avoid declaring extraneous identifiers.
+  
