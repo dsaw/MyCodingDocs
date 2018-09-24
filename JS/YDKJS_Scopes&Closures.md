@@ -31,5 +31,9 @@
   * Javascript has both function and block based scope.
   * Hiding of identifiers in different scope is based on the application of the *least privilege principle*.
   * Only those identifiers should be exposed to the scope which are required for use. Avoid declaring extraneous identifiers.
-  * Variables declared with `var` do not have block scope.
+  * Variables declared with `var` *do not have block scope*.
+  * Collision can be avoided by declaring entirely different names for identifiers.
+  * The way variable scopes are defined for ` var ` declarations are that the variables are scoped to the enclosing scope. It could be the closest function or the global scope.
+    * ` for( var i = 0; i< 5; ++i) { ... }` - `i` would actually be scoped to the function wrapping the for loop. 
+  * The ways in JS that implement block scoping are `let`, `catch` and `const`. 
   
