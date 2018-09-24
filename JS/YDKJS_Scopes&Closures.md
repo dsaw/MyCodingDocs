@@ -29,6 +29,7 @@
     * Using above constructs results in  reduced performance. Compiler uses optimizations when standard lexical scoping is used to speed up processing. However, with the above it has to drop them and analyze code at runtime for scope changes. 
 * Function vs Block scope.
   * Javascript has both function and block based scope.
-  * Hiding of identifiers in different scope is based on the application of the least privilege principle.
+  * Hiding of identifiers in different scope is based on the application of the *least privilege principle*.
   * Only those identifiers should be exposed to the scope which are required for use. Avoid declaring extraneous identifiers.
+  * Variables declared with `var` do not have block scope.
   
