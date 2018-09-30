@@ -40,6 +40,14 @@
     * `catch` - variables are scoped to the `catch` block.
     * `const` - just like `let` but it cannot be edited later.
   * IIFE also define a function scope for the variables declared inside.
+* Hoisting.
+  * Javascript processes code in two phases as noted before, compiler phase and engine phase.
+    * It interprets the following ` a = 2; var a;` as a declaration and an assignment. The declaration is processed first and *hoisted* to the top of the code. Assignments are processed later in the engine phase.
+    * Function and variable declarations are hoisted but not function expressions.
+      * `foo(); var foo = function() { ... }` - This will set the reference `foo` throw a `TypeError` since foo is `undefined`.
+    * Functions are hoisted first when there are duplicate definitions.
+    * A named function expression's name will not be available to the enclosing scope. It will be inside the function.
+    
   
   
  
