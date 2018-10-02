@@ -47,6 +47,8 @@
       * `foo(); var foo = function() { ... }` - This will set the reference `foo` throw a `TypeError` since foo is `undefined`.
     * Functions are hoisted first when there are duplicate definitions.
     * A named function expression's name will not be available to the enclosing scope. It will be inside the function.
+* Scope closure.
+  * Closure is when a function is able to remember its lexical scope when it is executed outside its scope
     
   
   
