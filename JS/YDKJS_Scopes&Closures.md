@@ -48,7 +48,8 @@
     * Functions are hoisted first when there are duplicate definitions.
     * A named function expression's name will not be available to the enclosing scope. It will be inside the function.
 * Scope closure.
-  * Closure is when a function is able to remember its lexical scope when it is executed outside its scope
+  * Closure is when a function is able to remember its lexical scope when it is executed outside its scope.
+  * Closure is observed when an outer function returns an inner function that uses a variable of the outer function. Thus, the inner function maintains *closure* over the outer scope.
     
   
   
