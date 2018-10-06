@@ -50,6 +50,8 @@
 * Scope closure.
   * Closure is when a function is able to remember its lexical scope when it is executed outside its scope.
   * Closure is observed when an outer function returns an inner function that uses a variable of the outer function. Thus, the inner function maintains *closure* over the outer scope.
+    * Eg. `function foo(i) { function bar() { console.log(i); } return bar;} var f = foo(5); f();  # print 5`
+    * 
     
   
   
