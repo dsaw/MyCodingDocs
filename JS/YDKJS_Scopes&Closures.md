@@ -51,8 +51,40 @@
   * Closure is when a function is able to remember its lexical scope when it is executed outside its scope.
   * Closure is observed when an outer function returns an inner function that uses a variable of the outer function. Thus, the inner function maintains *closure* over the outer scope.
     * Eg. `function foo(i) { function bar() { console.log(i); } return bar;} var f = foo(5); f();  # print 5`
-    * 
-    
+    * Examples of real world usage is in timers, ajax requests, web workers etc.
+  * Per iteration scope
+    * Closure property can be used to simulate per iteration scope. Some ways to try it out:
+      * ```
+        for( var i=1; i<=5; ++i) {
+          setTimeout( function() { console.log(i); }, i*1000);
+          }
+        ```
+      * The above would print 6 five times. It doesn't work as intended since the anonymous function has closure over the **global** variable i. The timer is executed after the loop is done, so i is 6 and is shared.
+      * ```
+        for( var i=1; i<=5; ++i) {
+          let j = i;
+          setTimeout( function() { console.log(j); }, j*1000);
+          }
+        ```
+      * This works because there is a block scope variable with its own value in each iteration. The function will have closure over those differing values in each iteration.
+      * Another way without block scope is to use IIFE's and declare its own variable inside it.
+   * Module pattern
+     * This can be implemented using closures. An outer function will define some inner functions and variables inside it. These "private" properties are returned in an object format.
+     * ```
+       function myModule() {
+         var j=4;
+         function foo() {
+             console.log("what's this? " + j);
+             }
+         return
+         {
+           foo : foo
+         }
+       }
+       ```
+     * The returned object represents the public API of the module. Note that the module function needs to be called for that inner scopes to have data initialized.
+       * ` var m = myModule(); m.foo(); # what's this? 4`
+  * 
   
   
  
