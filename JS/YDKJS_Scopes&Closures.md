@@ -82,9 +82,14 @@
          }
        }
        ```
-     * The returned object represents the public API of the module. Note that the module function needs to be called for that inner scopes to have data initialized.
+     * The returned object represents the public API of the module. Note that the module function needs to be called for those inner scopes to have data initialized.
        * ` var m = myModule(); m.foo(); # what's this? 4`
-  * 
+  * Module dependency manager 
+   * The closure feature is used in many module dependency managers. A simple proof of concept uses a function definition wrapper and passes in a list of dependencies for the module to execute.
+     * `function Manager() { var modules={}; function define(name, dependencies, implementation) { ...}  function get(name) { return modules[name]; } return { define: define, get: get}`
+     * `define` passes in a dependencies list, calls the public API of each dependency and stores it in the list. The original module function is called with the API's of its dependencies as arguments and stored in the `module` object.
+     * `get` will return the public API of the module stored in the object.
+  
   
   
  
