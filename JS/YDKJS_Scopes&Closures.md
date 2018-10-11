@@ -89,7 +89,12 @@
      * `function Manager() { var modules={}; function define(name, dependencies, implementation) { ...}  function get(name) { return modules[name]; } return { define: define, get: get}`
      * `define` passes in a dependencies list, calls the public API of each dependency and stores it in the list. The original module function is called with the API's of its dependencies as arguments and stored in the `module` object.
      * `get` will return the public API of the module stored in the object.
-  
-  
+  * Future Modules
+    * `import` - It will import one or more members of the modules API into the current scope. Each of them is bound to a variable.
+    * `export` - The variable or function specified is made available to the file that imports this module.
+    * `module` - This will import all the identifiers in the module under the name specified. ` module foo from "foo"; foo.func()`
+    * ES6 modules are static, the API's can't be changed at runtime. The compiler can throw an error early when the reference doesn't  exist.
+    * Modules need to be defined per file.
+    
   
  
