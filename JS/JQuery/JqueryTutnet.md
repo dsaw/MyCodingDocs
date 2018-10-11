@@ -9,41 +9,41 @@
 	* Or include it using another link - Google's CDN & Microsoft CDN
 	
 * ### Hello World!
-	* _$('#divTest').text('Hello world');_ - The $ shortcut will access jQuery. The #divTest will select all elements with id divTest and call the text method on it. The text is set to 'Hello world!'.
+	* _$('#divTest').text('Hello world')_ - The $ shortcut will access jQuery. The #divTest will select all elements with id divTest and call the text method on it. The text is set to 'Hello world!'.
 		* Any selector can be used like '.' and method be called. It is shorter code than doing it in just JS.
 	* Typically, wait for the document to be fully *loaded* and ready before jQuery functions are called.
 	
 * ### Ready event
-	* _$(document).ready(function() {...});_ - anonymous function is called when the document is loaded and ready.
-	* _$( function() {...});_ - shorthand version of above line.
+	* _$(document).ready(function() {...})_ - anonymous function is called when the document is loaded and ready.
+	* _$( function() {...})_ - shorthand version of above line.
 		* Event is fired as soon as the page is loaded.
 		
 * ### Method chaining
-	* _$('#divTest').text(str).removeClass("blue").addClass("bold").css("color","blue");_ - Methods can be chained on the same object. No need to repeatedly call the same object
+	* _$('#divTest').text(str).removeClass("blue").addClass("bold").css("color","blue")_ - Methods can be chained on the same object. No need to repeatedly call the same object
 	* _$('query')_ - Takes the selector query and returns a Jquery object.
 		* Selector can select elements based on ID,class,type, attributes, values and so on.
 		
 * ### Selector types
-	* _$("a[target='_blank']").append(" [new window] ");_ - selects all links (a) with attribute target equal to '_blank'.
+	* _$("a[target='_blank']").append(" [new window] ")_ - selects all links (a) with attribute target equal to '_blank'.
 	* _Parent child relation selectors_
-		* _$('p > div').css("color","blue");_ - selects direct children div element of p
-		* _$('a div').css("color","gree");_ - selects any descendant div element of a
+		* _$('p > div').css("color","blue")_ - selects direct children div element of p
+		* _$('a div').css("color","gree")_ - selects any descendant div element of a
 		
 		
 * ### Events
 	* 	_Fading elements_ - Fade objects in and out of visibility
-		*   _$('selector').fadeIn(dur, easing)l_ - Takes three paramaters: duration of effect in ms, name of easing function.
-		*   _$('selector').fadeOut(dur, easing);_ - same parameters
-		*   _$('selector').fadeToggle("slow");_ - Fades the objects based on the toggle parameter 
+		*   _$('selector').fadeIn(dur, easing)_ - Takes three paramaters: duration of effect in ms, name of easing function.
+		*   _$('selector').fadeOut(dur, easing)_ - same parameters
+		*   _$('selector').fadeToggle("slow")_ - Fades the objects based on the toggle parameter 
 	
 	* 	_Sliding elements_ - Slide objects up and down of visibility. Animates the height of the respective object
-		*   _$('selector').slideIn(dur, easing);_ - Takes three parameters: duration of effect in ms, name of easing function.
-		*   _$('selector').slideOut(dur, easing);_ - same parameters
-		*   _$('selector').slideToggle("slow");_ - Slides the objects in and out of visibility. It will check the 'display' property of the element, if hidden will be restored to the type. Applies vice versa too. 
+		*   _$('selector').slideIn(dur, easing)_ - Takes three parameters: duration of effect in ms, name of easing function.
+		*   _$('selector').slideOut(dur, easing)_ - same parameters
+		*   _$('selector').slideToggle("slow")_ - Slides the objects in and out of visibility. It will check the 'display' property of the element, if hidden will be restored to the type. Applies vice versa too. 
 	
 	*  _Animating elements_ - Custom animations can be executed
 		* _$('selector').animate(property_change, duration, easing,complete);_ - Animates the element by performing property change with set duration and an easing function. **Complete** is a function that runs after the animation is complete.
-		* _$('selector').stop();_ - Stops the animation affecting the selector. Other animations remain running in the queue if the first parameter is given as true.
+		* _$('selector').stop()_ - Stops the animation affecting the selector. Other animations remain running in the queue if the first parameter is given as true.
 		
 * ### Getting and setting content 
 	* _$('selector').text()_ - Textual representation of the inner content for all regular elements.
