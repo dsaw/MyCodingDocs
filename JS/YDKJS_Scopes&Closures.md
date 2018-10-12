@@ -93,7 +93,7 @@
     * `import` - It will import one or more members of the modules API into the current scope. Each of them is bound to a variable.
     * `export` - The variable or function specified is made available to the file that imports this module.
     * `module` - This will import all the identifiers in the module under the name specified. ` module foo from "foo"; foo.func()`
-    * ES6 modules are static, the API's can't be changed at runtime. The compiler can throw an error early when the reference doesn't  exist.
+    * ES6 modules are static, the API's can't be changed at runtime. The compiler can throw an error earlier when the reference doesn't  exist.
     * Modules need to be defined per file.
     
   
