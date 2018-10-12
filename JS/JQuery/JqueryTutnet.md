@@ -19,9 +19,9 @@
 		* Event is fired as soon as the page is loaded.
 		
 * ### Method chaining
-	* `$('#divTest').text(str).removeClass("blue").addClass("bold").css("color","blue")` - Methods can be chained on the same object. No need to repeatedly call the same object
+	* `$('#divTest').text(str).removeClass("blue").addClass("bold").css("color","blue")` - Methods can be chained on the same object. No need to repeatedly call the same object.
 	* `$('query')` - Takes the selector query and returns a Jquery object.
-		* Selector can select elements based on ID,class,type, attributes, values and so on.
+		* Selector can select elements based on ID, class, type, attributes, values and so on.
 		
 * ### Selector types
 	* `$("a[target='_blank']").append(" [new window] ")` - selects all links (a) with attribute target equal to '_blank'.
@@ -32,7 +32,7 @@
 		
 * ### Events
 	* 	`Fading elements` - Fade objects in and out of visibility
-		*   `$('selector').fadeIn(dur, easing)` - Takes three paramaters: duration of effect in ms, name of easing function.
+		*   `$('selector').fadeIn(dur, easing)` - Takes three parameters: duration of effect in ms, name of easing function.
 		*   `$('selector').fadeOut(dur, easing)` - same parameters
 		*   `$('selector').fadeToggle("slow")` - Fades the objects based on the toggle parameter 
 	
@@ -42,7 +42,7 @@
 		*   `$('selector').slideToggle("slow")` - Slides the objects in and out of visibility. It will check the 'display' property of the element, if hidden will be restored to the type. Applies vice versa too. 
 	
 	* `Animating elements` - Custom animations can be executed
-		* `$('selector').animate(property_change, duration, easing,complete);` - Animates the element by performing property change with set duration and an easing function. **Complete** is a function that runs after the animation is complete.
+		* `$('selector').animate(property_change, duration, easing,complete);` - Animates the element by performing property change with set duration and an easing function. *Complete* is a function that runs after the animation is complete.
 		* `$('selector').stop()` - Stops the animation affecting the selector. Other animations remain running in the queue if the first parameter is given as true.
 		
 * ### Getting and setting content 
@@ -59,8 +59,8 @@
 	* `$('selector').prepend(elem)` - Prepend the elem in the list
 	
 	* `$('selector').before(elem)` - Adds the element before each element in the selected set of elements. 
-		* elem could be a Jquery object, DOM object or HTML String.
-	* `$('selector').after(elem)`  -Adds the element after each element in the selected set of elements.
+		* elem could be a JQuery object, DOM object or HTML String.
+	* `$('selector').after(elem)`  - Adds the element after each element in the selected set of elements.
 	* Similarly, `insertBefore` and `insertAfter` methods perform the same function. Only the order is switched.
 	
 	
