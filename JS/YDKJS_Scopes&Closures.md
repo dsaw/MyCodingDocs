@@ -95,6 +95,10 @@
     * `module` - This will import all the identifiers in the module under the name specified. ` module foo from "foo"; foo.func()`
     * ES6 modules are static, the API's can't be changed at runtime. The compiler can throw an error earlier when the reference doesn't  exist.
     * Modules need to be defined per file.
+  * Lexical vs Dynamic scopes
+    * Lexical scopes are defined based on _where_ the function was declared. It is static and does not change when the code is run.
+    * Whereas dynamic scopes are determined based on *where and how* the function is called.
+    * `function foo() { console.log(a)}; function bar() { var a = 3; foo(a);}  var a = 2; bar()`. It will return 2, not 3. Javascript has only lexical scope.
     
   
  
