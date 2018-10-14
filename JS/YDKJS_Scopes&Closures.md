@@ -99,6 +99,9 @@
     * Lexical scopes are defined based on _where_ the function was declared. It is static and does not change when the code is run.
     * Whereas dynamic scopes are determined based on *where and how* the function is called.
     * `function foo() { console.log(a)}; function bar() { var a = 3; foo(a);}  var a = 2; bar()`. It will return 2, not 3. Javascript has only lexical scope.
-    
+  * Polyfilling block scopes
+    * To use block scoping in pre-ES6 environments, `catch` clause can be used. It is ugly code, but it works.
+  * lexical this
+    * 
   
  
