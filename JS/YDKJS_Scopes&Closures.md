@@ -102,6 +102,9 @@
   * Polyfilling block scopes
     * To use block scoping in pre-ES6 environments, `catch` clause can be used. It is ugly code, but it works.
   * lexical this
-    * 
+    * The arrow function syntax has got a unique behaviour. It inherits the value of `this` from its enclosing lexical scope.
+    * This does not work like normal `this` rules. It can be confusing because `this` in a function does not work like that.
+    * The more correct way would be to use `bind` and pass in a reference which needs to be set to `this`.
+    
   
  
