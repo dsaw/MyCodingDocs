@@ -105,6 +105,9 @@
     * The arrow function syntax has got a unique behaviour. It inherits the value of `this` from its enclosing lexical scope.
     * This does not work like normal `this` rules. It can be confusing because `this` in a function does not work like that.
     * The more correct way would be to use `bind` and pass in a reference which needs to be set to `this`.
+    * arrow function
+      * `var obj = {count: 0, coolFunc: () => {console.log(this.count);} }; ` - Calling above function will print `undefined` instead of the actual count of the enclosing object.
+      
     
   
  
