@@ -19,5 +19,9 @@
     * `apply` and `call` are same, except `apply` takes in an array of arguments.
     * `bind` returns a new function with `this` set to the first argument.
   * `this` entirely depends on how the function was called and from where - the call site.
+  * `this` does not refer to the lexical scope.
+
+*  The mechanism of `this`.
+
   
    
