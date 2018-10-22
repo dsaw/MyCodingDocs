@@ -22,6 +22,8 @@
   * `this` does not refer to the lexical scope.
 
 *  The mechanism of `this`.
-
+  * The default binding of `this` resolves to global variables. If strict mode is set, `this` resolves to `undefined`.
+  * If the call site use the object context to call the function, then the `this` of function will be set to the object.
+  *
   
    
