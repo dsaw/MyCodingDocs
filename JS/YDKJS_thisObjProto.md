@@ -24,6 +24,8 @@
 *  The mechanism of `this`.
   * The default binding of `this` resolves to global variables. If strict mode is set, `this` resolves to `undefined`.
   * If the call site use the object context to call the function, then the `this` of function will be set to the object.
-  *
+  * Eg: ` var obj = { a:2, foo:foo}; obj.foo();  # 2`
+* Implicit binding lost
+  * `var bar = obj.foo; bar(); ` - `this` will refer to global context, not obj context when the function reference is called.
   
    
