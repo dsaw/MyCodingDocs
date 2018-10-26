@@ -27,5 +27,13 @@
   * Eg: ` var obj = { a:2, foo:foo}; obj.foo();  # 2`
 * Implicit binding lost
   * `var bar = obj.foo; bar(); ` - `this` will refer to global context, not obj context when the function reference is called.
-  
+* new binding
+  * The `new` operator acts like a constructor but is just a function in JS.
+  * ```
+    function bar(a) { this.a = a; }
+    var baz = new bar(4);
+    console.log(baz.a);  # 4
+    ```
+     * Above will create a brand new  empty object and return it to the variable. The function is called with `this` set to the new object. The newly constructed object is prototype-linked.
+     * In the `new` call, if the function doesn not return its own alternate object, then the new object is returned.
    
