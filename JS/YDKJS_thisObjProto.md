@@ -34,6 +34,9 @@
     var baz = new bar(4);
     console.log(baz.a);  # 4
     ```
-     * Above will create a brand new  empty object and return it to the variable. The function is called with `this` set to the new object. The newly constructed object is prototype-linked.
-     * In the `new` call, if the function doesn not return its own alternate object, then the new object is returned.
+     * Above will create a brand new empty object and return it to the variable. The function is called with `this` set to the new object. The newly constructed object is prototype-linked.
+     * In the `new` call, if the function does not return its own alternate object, then the new object is returned.
+* Binding order
+  * new binding takes precedence over explicit binding, which takes precedence over implicit binding.
+  * 
    
