@@ -38,5 +38,5 @@
      * In the `new` call, if the function does not return its own alternate object, then the new object is returned.
 * Binding order
   * new binding takes precedence over explicit binding, which takes precedence over implicit binding.
-  * 
+  * new binding will override hard binding using `bind`.
    
