@@ -39,4 +39,12 @@
 * Binding order
   * new binding takes precedence over explicit binding, which takes precedence over implicit binding.
   * new binding will override hard binding using `bind`.
-   
+    * The `bind` utility is sophisticated, it will pass in the arguments during the initial binding as default arguments of the returned function. Also known as **partial application**.
+* Ignored `this`
+  * In `call`, `apply` or `bind`, if `null` and `undefined` is passed as a binding parameter, these values are ignored and default binding rule is used.
+  * To be safer, an empty object can be created using `Object.create()`, without delegation to prototype and passed in to the respective functions.
+* Indirection
+  * if the effective call site is just the function reference, even if that function is inside an object, the default binding rules will apply.
+
+  
+  
