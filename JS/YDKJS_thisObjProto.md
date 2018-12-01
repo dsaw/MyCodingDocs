@@ -45,6 +45,17 @@
   * To be safer, an empty object can be created using `Object.create()`, without delegation to prototype and passed in to the respective functions.
 * Indirection
   * if the effective call site is just the function reference, even if that function is inside an object, the default binding rules will apply.
-
-  
+* Lexical `this`
+  * Arrow functions have a different form of scoping. It's `this` adopts a value from enclosing function at call time.
+  * This behaviour is more lexical and does not work based on the usual rules of `this`.
+    * ```
+      function foo() {  return () => {console.log(a)}; }
+      var obj = {a:1};
+      var a = 2;
+      
+      var bar = foo();
+      bar();   // 2
+      bar.call(obj); //  2, not 1
+      ```
+  * A rule of thumb, avoid using both styles of code. stick to either traditional `this` or lexical `this`.  
   
