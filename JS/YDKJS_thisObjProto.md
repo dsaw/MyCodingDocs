@@ -60,4 +60,5 @@
   * A rule of thumb, avoid using both styles of code. stick to either traditional `this` or lexical `this`.  
 * Object
   * Objects come in literal form and constructed form. The constructed form is rarely used.
-  
+  * There are primary types and built in objects in JS. Many built in objects like `String`, `Number` are related to it's primitive counterparts. They are just built-in functions.
+  *
