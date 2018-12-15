@@ -60,5 +60,7 @@
   * A rule of thumb, avoid using both styles of code. stick to either traditional `this` or lexical `this`.  
 * Object
   * Objects come in literal form and constructed form. The constructed form is rarely used.
-  * There are primary types and built in objects in JS. Many built in objects like `String`, `Number` are related to it's primitive counterparts. They are just built-in functions.
-  *
+  * There are primary types and built in objects in JS. Many built in objects like `String`, `Number` are related to its primitive counterparts. They are just built-in functions.
+  * Object contents can be accessed in two ways - "key" access `obj['a']` or "property" access `obj.a` . The former can take any UTF-8 compatible string as the "key".
+  * There is no concept of a method in JS, if a function is 'part' of an object, it is just property access.
+  * Properties can be added to `Array` type without changing the length of array.
