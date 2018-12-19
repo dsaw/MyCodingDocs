@@ -64,3 +64,9 @@
   * Object contents can be accessed in two ways - "key" access `obj['a']` or "property" access `obj.a` . The former can take any UTF-8 compatible string as the "key".
   * There is no concept of a method in JS, if a function is 'part' of an object, it is just property access.
   * Properties can be added to `Array` type without changing the length of array.
+* Duplicating objects.
+  * Performing a shallow copy is done using `Object.assign(targ, src)`. It iterates over all the enumerable, owned keys of source object and copies it to the target object. The references are copied as is. Note that this is `=` style assignment.
+* Descriptors
+  * Property descriptors are descriptions of properties in JS. They can define what property name & value is of the given object, whether it can be writable, enumerable, configurable.
+    * `Object.defineProperty(obj,name,{value:?,writable:?, enumerable:?, configurable:?} );`
+  
