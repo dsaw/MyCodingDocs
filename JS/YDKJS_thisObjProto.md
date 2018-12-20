@@ -69,4 +69,10 @@
 * Descriptors
   * Property descriptors are descriptions of properties in JS. They can define what property name & value is of the given object, whether it can be writable, enumerable, configurable.
     * `Object.defineProperty(obj,name,{value:?,writable:?, enumerable:?, configurable:?} );`
+    * `writable` defines if the property can be set to a value, otherwise it will fail.
+    * `configurable` will ensure the property descriptor can be set again. if set to false, the property cannot be configured again nor deleted.
+    * `enumerable` if set to True will make the property visible when the object is iterated over for..in loops.
+      * `getOwnPropertyNames` will return **all** the properties of the object while `Object.keys(obj)` returns only enumerable properties.
+  * Accessor 
+    * `[[Get]]` operation happens when a property access is performed on an object. If the requested property does not exist, `undefined` is returned.
   
