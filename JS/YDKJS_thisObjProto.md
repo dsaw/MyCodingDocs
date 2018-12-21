@@ -75,4 +75,13 @@
       * `getOwnPropertyNames` will return **all** the properties of the object while `Object.keys(obj)` returns only enumerable properties.
   * Accessor 
     * `[[Get]]` operation happens when a property access is performed on an object. If the requested property does not exist, `undefined` is returned.
+    * `[[Put]]` operation works a little more than just performing property setting. If the property is an accessor descriptor, the setter is called. Else if the property `writable` is false then it fails.
+    * An accessor descriptor is a property with `get` and `set` methods that return and set values respectively.
+      * The `value`, `writable` properties are moot.
+      * `var myobj = { get a() { return 2} };`
+  * Existence
+    * `in` will check if property exists in given and object and continue up it's prototype chain.
+    *  `hasOwnProperty` will only check for the given object.
+  * Enumeration
+    * 
   
