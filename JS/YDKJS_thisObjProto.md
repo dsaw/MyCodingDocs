@@ -85,7 +85,11 @@
   * Iterators
     * An object can be iterated over if it's `Symbol.iterator` property returns a function. This will be the iterator object whose `next` function will be called to return `{value: v, done: t}`. Once all the properties are iterated over the last next call will return the `done` set as `true`. Also known as `@@iterator` property.
     * `for (var v of obj) { console.log(v); }`
-    
+* Classes in JS
+  * JS has no classes like in OOP languages. It has got elements that _simulate_ classes.
+  * Class inheritance is done though object copying.
+  * There are no relative references to the parent class like in OOP languages. A separate copy of parent class behaviour is maintained along with the child class behaviour.
+  
     
     
   
