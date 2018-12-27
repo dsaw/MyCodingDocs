@@ -88,7 +88,15 @@
 * Classes in JS
   * JS has no classes like in OOP languages. It has got elements that _simulate_ classes.
   * Class inheritance is done though object copying.
-  * There are no relative references to the parent class like in OOP languages. A separate copy of parent class behaviour is maintained along with the child class behaviour.
+  * There are no relative references to the parent class like in OOP languages. A separate copy of parent class behaviour is maintained along with the child class behaviour. This has to be performed through explicit mechanisms.
+  * Polymorphism in JS
+    * Since there is no actual polymorphism in JS, it has to be performed using a function called a 'mixin'.
+    * Mixins copy new properties from source object to return them in the target object. It is simple reference duplication.
+      * Explicit pseudo-polymorphism
+        * The mixin is called to copy properties from the parent object to the child object. The child object with the method to be "overidden" has got an explicit call to the method with the same name in the parent object. eg: `BaseObj.method.call(this)`.
+      * Implicit mixin
+        * In this the child object has the method defined in it as above, without the mixin call.
+    * Mixins make code harder to maintain and read. Remember only the references are duplicated, there is no actual method and class copy like in OOP languages.
   
     
     
