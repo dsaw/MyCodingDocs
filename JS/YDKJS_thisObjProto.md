@@ -97,7 +97,8 @@
       * Implicit mixin
         * In this the child object has the method defined in it as above, without the mixin call.
     * Mixins make code harder to maintain and read. Remember only the references are duplicated, there is no actual method and class copy like in OOP languages.
-  
+* Prototype.
+  * Object prototypes are used to link objects.
     
     
   
