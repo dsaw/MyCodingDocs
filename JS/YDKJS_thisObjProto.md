@@ -99,6 +99,8 @@
     * Mixins make code harder to maintain and read. Remember only the references are duplicated, there is no actual method and class copy like in OOP languages.
 * Prototype.
   * Object prototypes are used to link objects.
+  * Prototypes are just a form of object delegation. There is no class copying, only objects are linked to each other. 
+  *
     
     
   
