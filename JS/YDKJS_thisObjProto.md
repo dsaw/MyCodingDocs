@@ -100,7 +100,8 @@
 * Prototype.
   * Object prototypes are used to link objects.
   * Prototypes are just a form of object delegation. There is no class copying, only objects are linked to each other. 
-  *
+  * Prototypes can act as fallbacks when the object doesn't have the particular method and field. 
+  
     
     
   
