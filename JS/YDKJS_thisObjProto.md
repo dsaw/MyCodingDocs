@@ -101,6 +101,7 @@
   * Object prototypes are used to link objects.
   * Prototypes are just a form of object delegation. There is no class copying, only objects are linked to each other. 
   * Prototypes can act as fallbacks when the object doesn't have the particular method and field. 
+  * One way to create an object that points to another object through a prototype. Eg: ` var o = Object.create(o2);`
   
     
     
