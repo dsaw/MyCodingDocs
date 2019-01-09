@@ -109,7 +109,11 @@
       * Else if the property is read-only, then no operation is allowed.
       * If the property is a setter, than that property is set and no new property will be added. 
   * Avoid shadowing, it becomes unclear and confusing in practical life.
-  
+* Using prototype to simulate "class" functions
+  * Creating another function and using it to create a new object using `new`, we can make multiple "copies" of objects. Though they aren't actually instances in the OOP sense, the prototype of those objects are linked to the prototype of the function.
+* Constructor call.
+  * The function used, its prototype has a property called `constructor`. This contains a reference to the code in function.
     
+     
     
   
