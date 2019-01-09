@@ -101,7 +101,14 @@
   * Object prototypes are used to link objects.
   * Prototypes are just a form of object delegation. There is no class copying, only objects are linked to each other. 
   * Prototypes can act as fallbacks when the object doesn't have the particular method and field. 
-  * One way to create an object that points to another object through a prototype. Eg: ` var o = Object.create(o2);`
+  * One way to create an object that points to another object through a prototype is by using `create`. Eg: ` var o = Object.create(o2);`
+  * Shadowing properties on object.
+    * Shadowing means to add a new property of the same name of another property that exists of the object higher up on the prototype chain.
+    * When an object property is set and the property does **not** exist on the object but is there on the prototype chain, then that property might be shadowed.
+      * If the property is not read-only, then shadowing occurs.
+      * Else if the property is read-only, then no operation is allowed.
+      * If the property is a setter, than that property is set and no new property will be added. 
+  * Avoid shadowing, it becomes unclear and confusing in practical life.
   
     
     
