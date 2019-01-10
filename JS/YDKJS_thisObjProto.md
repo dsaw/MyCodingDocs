@@ -113,6 +113,15 @@
   * Creating another function and using it to create a new object using `new`, we can make multiple "copies" of objects. Though they aren't actually instances in the OOP sense, the prototype of those objects are linked to the prototype of the function.
 * Constructor call.
   * The function used, its prototype has a property called `constructor`. This contains a reference to the code in function.
+  * The constructor is easily settable and can become confusing if is changed because this is called when `new` is used.
+  * Remember the constructor does not mean "constructed by".
+* Class relationships.
+  * To check if an object appears on the prototype chain of another object. `b.isPrototypeOf(c);`.
+* Delegation
+  * Using object links as fallbacks is not robust design. One way to improve upon it is using Delegation design pattern.
+  * `myObject.doCool = function() { this.cool(); };`. There is a cool method up the chain.
+ 
+  
     
      
     
