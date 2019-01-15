@@ -120,6 +120,11 @@
 * Delegation
   * Using object links as fallbacks is not robust design. One way to improve upon it is using Delegation design pattern.
   * `myObject.doCool = function() { this.cool(); };`. There is a cool method up the chain.
+* OLOO
+  * Thinking in terms of delegation in Javascript is much more natural than forcing down object oriented programming on it.
+  * Design is much simpler with object linking and code is reduced. 
+  * Introspection is done with `isPrototypeOf` which makes it clearer instead of the `instanceof`.
+  
  
   
     
