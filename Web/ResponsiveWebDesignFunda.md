@@ -4,3 +4,4 @@
 * #### Types of responsive patterns
   * Column drop
   * Mostly fluid
+  * Off Canvas - 
