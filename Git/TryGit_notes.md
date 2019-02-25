@@ -27,8 +27,9 @@
 	
 * `git diff HEAD` - Displays the differences between any two files, commits, index and commits or even the working directory and commit.
 					HEAD denotes the last commit performed which is compared with the changes in the working tree
+	* `git diff --staged` - Displays the differences between changes in the staging area and the commit specified. By default, assumes HEAD.
+	* `--diff-version=ACDM` - Displays only the files that were added, copied, deleted and modified respectively.
 
-* `git diff --staged` - Displays the differences between changes in the staging area and the commit specified. By default, assumes HEAD.
 
 * `git reset files` - Unstages the specified files. i.e: Removes them from changes to be committed. File is still present in directory though. --soft, --hard, --mixed flags do not have any effect in the file level version.
 
