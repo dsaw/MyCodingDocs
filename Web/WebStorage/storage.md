@@ -9,7 +9,7 @@
     * Neither local/session storage is sent to the server, while cookies are.
 
 * ## Cookies
-    * Used for session management - a way for server to send state information to a user agent which can mantai/ modify it and send back.
+    * Used for personalization, tracking user behaviour & session management - a way for server to send state information to a user agent which can mantai/ modify it and send back.
     * Has a limit of 4KB.
     * has the form of string key-value pairs.
     * Server sends cookies in `Set-Cookie` header with parameters `Domain`, `Path` to define where the user agent can send back after storing them.
