@@ -13,3 +13,6 @@
     * supports cyclic dependencies because these imports are **indirections**.
     * Module imports can be statically analyzed and optimized (dead code elimination, tree shaking).
     * Support for **dynamic loading** using `module('identifier').then(...)` which returns a Promise.
+
+
+    # Transpilers & Polyfills
